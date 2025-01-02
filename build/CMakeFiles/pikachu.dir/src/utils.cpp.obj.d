@@ -1,6 +1,5 @@
-CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj: \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\SlidingGame.cpp \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\slidingGame.h \
+CMakeFiles/pikachu.dir/src/utils.cpp.obj: \
+ C:\Users\lvkha\Desktop\pikachu-matching-game\src\utils.cpp \
  C:\Users\lvkha\Desktop\pikachu-matching-game\src\utils.h \
  C:/msys64/ucrt64/include/c++/13.2.0/iostream \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/requires_hosted.h \
@@ -353,6 +352,4 @@ CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj: \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
  C:/msys64/ucrt64/include/stdint.h \
  C:/msys64/ucrt64/include/c++/13.2.0/limits \
- C:/msys64/ucrt64/include/c++/13.2.0/bits/parse_numbers.h \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\MenuAndControl.h \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\Cell.h
+ C:/msys64/ucrt64/include/c++/13.2.0/bits/parse_numbers.h

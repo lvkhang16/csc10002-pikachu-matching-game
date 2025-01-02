@@ -1,0 +1,56 @@
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar
+delete Box
+print cell background
+set isvalid to false
+print status bar

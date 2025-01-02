@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/cell.cpp" "CMakeFiles/pikachu.dir/src/cell.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/cell.cpp.obj.d"
+  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/Cell.cpp" "CMakeFiles/pikachu.dir/src/Cell.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/Cell.cpp.obj.d"
+  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/MenuAndControl.cpp" "CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj.d"
+  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/NormalGame.cpp" "CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj.d"
+  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/SlidingGame.cpp" "CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj.d"
   "C:/Users/lvkha/Desktop/pikachu-matching-game/src/main.cpp" "CMakeFiles/pikachu.dir/src/main.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/main.cpp.obj.d"
-  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/menuAndControl.cpp" "CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj.d"
-  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/normalGame.cpp" "CMakeFiles/pikachu.dir/src/normalGame.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/normalGame.cpp.obj.d"
-  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/slidingGame.cpp" "CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj.d"
-  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/utility.cpp" "CMakeFiles/pikachu.dir/src/utility.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/utility.cpp.obj.d"
+  "C:/Users/lvkha/Desktop/pikachu-matching-game/src/utils.cpp" "CMakeFiles/pikachu.dir/src/utils.cpp.obj" "gcc" "CMakeFiles/pikachu.dir/src/utils.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -71,26 +71,71 @@ include CMakeFiles/pikachu.dir/flags.make
 CMakeFiles/pikachu.dir/codegen:
 .PHONY : CMakeFiles/pikachu.dir/codegen
 
-CMakeFiles/pikachu.dir/src/cell.cpp.obj: CMakeFiles/pikachu.dir/flags.make
-CMakeFiles/pikachu.dir/src/cell.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
-CMakeFiles/pikachu.dir/src/cell.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/cell.cpp
-CMakeFiles/pikachu.dir/src/cell.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pikachu.dir/src/cell.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/cell.cpp.obj -MF CMakeFiles\pikachu.dir\src\cell.cpp.obj.d -o CMakeFiles\pikachu.dir\src\cell.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\cell.cpp
+CMakeFiles/pikachu.dir/src/Cell.cpp.obj: CMakeFiles/pikachu.dir/flags.make
+CMakeFiles/pikachu.dir/src/Cell.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
+CMakeFiles/pikachu.dir/src/Cell.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/Cell.cpp
+CMakeFiles/pikachu.dir/src/Cell.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pikachu.dir/src/Cell.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/Cell.cpp.obj -MF CMakeFiles\pikachu.dir\src\Cell.cpp.obj.d -o CMakeFiles\pikachu.dir\src\Cell.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\Cell.cpp
 
-CMakeFiles/pikachu.dir/src/cell.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/cell.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\cell.cpp > CMakeFiles\pikachu.dir\src\cell.cpp.i
+CMakeFiles/pikachu.dir/src/Cell.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/Cell.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\Cell.cpp > CMakeFiles\pikachu.dir\src\Cell.cpp.i
 
-CMakeFiles/pikachu.dir/src/cell.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/cell.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\cell.cpp -o CMakeFiles\pikachu.dir\src\cell.cpp.s
+CMakeFiles/pikachu.dir/src/Cell.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/Cell.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\Cell.cpp -o CMakeFiles\pikachu.dir\src\Cell.cpp.s
+
+CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj: CMakeFiles/pikachu.dir/flags.make
+CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
+CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/MenuAndControl.cpp
+CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj -MF CMakeFiles\pikachu.dir\src\MenuAndControl.cpp.obj.d -o CMakeFiles\pikachu.dir\src\MenuAndControl.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\MenuAndControl.cpp
+
+CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\MenuAndControl.cpp > CMakeFiles\pikachu.dir\src\MenuAndControl.cpp.i
+
+CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\MenuAndControl.cpp -o CMakeFiles\pikachu.dir\src\MenuAndControl.cpp.s
+
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj: CMakeFiles/pikachu.dir/flags.make
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/NormalGame.cpp
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj -MF CMakeFiles\pikachu.dir\src\NormalGame.cpp.obj.d -o CMakeFiles\pikachu.dir\src\NormalGame.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\NormalGame.cpp
+
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/NormalGame.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\NormalGame.cpp > CMakeFiles\pikachu.dir\src\NormalGame.cpp.i
+
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/NormalGame.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\NormalGame.cpp -o CMakeFiles\pikachu.dir\src\NormalGame.cpp.s
+
+CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj: CMakeFiles/pikachu.dir/flags.make
+CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
+CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/SlidingGame.cpp
+CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj -MF CMakeFiles\pikachu.dir\src\SlidingGame.cpp.obj.d -o CMakeFiles\pikachu.dir\src\SlidingGame.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\SlidingGame.cpp
+
+CMakeFiles/pikachu.dir/src/SlidingGame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/SlidingGame.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\SlidingGame.cpp > CMakeFiles\pikachu.dir\src\SlidingGame.cpp.i
+
+CMakeFiles/pikachu.dir/src/SlidingGame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/SlidingGame.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\SlidingGame.cpp -o CMakeFiles\pikachu.dir\src\SlidingGame.cpp.s
 
 CMakeFiles/pikachu.dir/src/main.cpp.obj: CMakeFiles/pikachu.dir/flags.make
 CMakeFiles/pikachu.dir/src/main.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
 CMakeFiles/pikachu.dir/src/main.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/main.cpp
 CMakeFiles/pikachu.dir/src/main.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pikachu.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pikachu.dir/src/main.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/main.cpp.obj -MF CMakeFiles\pikachu.dir\src\main.cpp.obj.d -o CMakeFiles\pikachu.dir\src\main.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\main.cpp
 
 CMakeFiles/pikachu.dir/src/main.cpp.i: cmake_force
@@ -101,84 +146,39 @@ CMakeFiles/pikachu.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/main.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\main.cpp -o CMakeFiles\pikachu.dir\src\main.cpp.s
 
-CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj: CMakeFiles/pikachu.dir/flags.make
-CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
-CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/menuAndControl.cpp
-CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj -MF CMakeFiles\pikachu.dir\src\menuAndControl.cpp.obj.d -o CMakeFiles\pikachu.dir\src\menuAndControl.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\menuAndControl.cpp
+CMakeFiles/pikachu.dir/src/utils.cpp.obj: CMakeFiles/pikachu.dir/flags.make
+CMakeFiles/pikachu.dir/src/utils.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
+CMakeFiles/pikachu.dir/src/utils.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/utils.cpp
+CMakeFiles/pikachu.dir/src/utils.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pikachu.dir/src/utils.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/utils.cpp.obj -MF CMakeFiles\pikachu.dir\src\utils.cpp.obj.d -o CMakeFiles\pikachu.dir\src\utils.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\utils.cpp
 
-CMakeFiles/pikachu.dir/src/menuAndControl.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/menuAndControl.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\menuAndControl.cpp > CMakeFiles\pikachu.dir\src\menuAndControl.cpp.i
+CMakeFiles/pikachu.dir/src/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/utils.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\utils.cpp > CMakeFiles\pikachu.dir\src\utils.cpp.i
 
-CMakeFiles/pikachu.dir/src/menuAndControl.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/menuAndControl.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\menuAndControl.cpp -o CMakeFiles\pikachu.dir\src\menuAndControl.cpp.s
-
-CMakeFiles/pikachu.dir/src/normalGame.cpp.obj: CMakeFiles/pikachu.dir/flags.make
-CMakeFiles/pikachu.dir/src/normalGame.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
-CMakeFiles/pikachu.dir/src/normalGame.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/normalGame.cpp
-CMakeFiles/pikachu.dir/src/normalGame.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pikachu.dir/src/normalGame.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/normalGame.cpp.obj -MF CMakeFiles\pikachu.dir\src\normalGame.cpp.obj.d -o CMakeFiles\pikachu.dir\src\normalGame.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\normalGame.cpp
-
-CMakeFiles/pikachu.dir/src/normalGame.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/normalGame.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\normalGame.cpp > CMakeFiles\pikachu.dir\src\normalGame.cpp.i
-
-CMakeFiles/pikachu.dir/src/normalGame.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/normalGame.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\normalGame.cpp -o CMakeFiles\pikachu.dir\src\normalGame.cpp.s
-
-CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj: CMakeFiles/pikachu.dir/flags.make
-CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
-CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/slidingGame.cpp
-CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj -MF CMakeFiles\pikachu.dir\src\slidingGame.cpp.obj.d -o CMakeFiles\pikachu.dir\src\slidingGame.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\slidingGame.cpp
-
-CMakeFiles/pikachu.dir/src/slidingGame.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/slidingGame.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\slidingGame.cpp > CMakeFiles\pikachu.dir\src\slidingGame.cpp.i
-
-CMakeFiles/pikachu.dir/src/slidingGame.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/slidingGame.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\slidingGame.cpp -o CMakeFiles\pikachu.dir\src\slidingGame.cpp.s
-
-CMakeFiles/pikachu.dir/src/utility.cpp.obj: CMakeFiles/pikachu.dir/flags.make
-CMakeFiles/pikachu.dir/src/utility.cpp.obj: CMakeFiles/pikachu.dir/includes_CXX.rsp
-CMakeFiles/pikachu.dir/src/utility.cpp.obj: C:/Users/lvkha/Desktop/pikachu-matching-game/src/utility.cpp
-CMakeFiles/pikachu.dir/src/utility.cpp.obj: CMakeFiles/pikachu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\lvkha\Desktop\pikachu-matching-game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pikachu.dir/src/utility.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pikachu.dir/src/utility.cpp.obj -MF CMakeFiles\pikachu.dir\src\utility.cpp.obj.d -o CMakeFiles\pikachu.dir\src\utility.cpp.obj -c C:\Users\lvkha\Desktop\pikachu-matching-game\src\utility.cpp
-
-CMakeFiles/pikachu.dir/src/utility.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pikachu.dir/src/utility.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lvkha\Desktop\pikachu-matching-game\src\utility.cpp > CMakeFiles\pikachu.dir\src\utility.cpp.i
-
-CMakeFiles/pikachu.dir/src/utility.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/utility.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\utility.cpp -o CMakeFiles\pikachu.dir\src\utility.cpp.s
+CMakeFiles/pikachu.dir/src/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pikachu.dir/src/utils.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lvkha\Desktop\pikachu-matching-game\src\utils.cpp -o CMakeFiles\pikachu.dir\src\utils.cpp.s
 
 # Object files for target pikachu
 pikachu_OBJECTS = \
-"CMakeFiles/pikachu.dir/src/cell.cpp.obj" \
+"CMakeFiles/pikachu.dir/src/Cell.cpp.obj" \
+"CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj" \
+"CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj" \
+"CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj" \
 "CMakeFiles/pikachu.dir/src/main.cpp.obj" \
-"CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj" \
-"CMakeFiles/pikachu.dir/src/normalGame.cpp.obj" \
-"CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj" \
-"CMakeFiles/pikachu.dir/src/utility.cpp.obj"
+"CMakeFiles/pikachu.dir/src/utils.cpp.obj"
 
 # External object files for target pikachu
 pikachu_EXTERNAL_OBJECTS =
 
-Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/cell.cpp.obj
+Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/Cell.cpp.obj
+Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj
+Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj
+Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj
 Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/main.cpp.obj
-Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj
-Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/normalGame.cpp.obj
-Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj
-Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/utility.cpp.obj
+Debug/pikachu.exe: CMakeFiles/pikachu.dir/src/utils.cpp.obj
 Debug/pikachu.exe: CMakeFiles/pikachu.dir/build.make
 Debug/pikachu.exe: CMakeFiles/pikachu.dir/linkLibs.rsp
 Debug/pikachu.exe: CMakeFiles/pikachu.dir/objects1.rsp

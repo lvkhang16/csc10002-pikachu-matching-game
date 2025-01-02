@@ -1,7 +1,7 @@
-CMakeFiles/pikachu.dir/src/normalGame.cpp.obj: \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\normalGame.cpp \
+CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj: \
+ C:\Users\lvkha\Desktop\pikachu-matching-game\src\NormalGame.cpp \
  C:\Users\lvkha\Desktop\pikachu-matching-game\src\normalGame.h \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\utility.h \
+ C:\Users\lvkha\Desktop\pikachu-matching-game\src\utils.h \
  C:/msys64/ucrt64/include/c++/13.2.0/iostream \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -354,5 +354,5 @@ CMakeFiles/pikachu.dir/src/normalGame.cpp.obj: \
  C:/msys64/ucrt64/include/stdint.h \
  C:/msys64/ucrt64/include/c++/13.2.0/limits \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/parse_numbers.h \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\menuAndControl.h \
- C:\Users\lvkha\Desktop\pikachu-matching-game\src\cell.h
+ C:\Users\lvkha\Desktop\pikachu-matching-game\src\MenuAndControl.h \
+ C:\Users\lvkha\Desktop\pikachu-matching-game\src\Cell.h

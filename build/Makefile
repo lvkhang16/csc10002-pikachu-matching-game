@@ -128,29 +128,101 @@ pikachu/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/build
 .PHONY : pikachu/fast
 
-src/cell.obj: src/cell.cpp.obj
-.PHONY : src/cell.obj
+src/Cell.obj: src/Cell.cpp.obj
+.PHONY : src/Cell.obj
 
 # target to build an object file
-src/cell.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/cell.cpp.obj
-.PHONY : src/cell.cpp.obj
+src/Cell.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/Cell.cpp.obj
+.PHONY : src/Cell.cpp.obj
 
-src/cell.i: src/cell.cpp.i
-.PHONY : src/cell.i
+src/Cell.i: src/Cell.cpp.i
+.PHONY : src/Cell.i
 
 # target to preprocess a source file
-src/cell.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/cell.cpp.i
-.PHONY : src/cell.cpp.i
+src/Cell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/Cell.cpp.i
+.PHONY : src/Cell.cpp.i
 
-src/cell.s: src/cell.cpp.s
-.PHONY : src/cell.s
+src/Cell.s: src/Cell.cpp.s
+.PHONY : src/Cell.s
 
 # target to generate assembly for a file
-src/cell.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/cell.cpp.s
-.PHONY : src/cell.cpp.s
+src/Cell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/Cell.cpp.s
+.PHONY : src/Cell.cpp.s
+
+src/MenuAndControl.obj: src/MenuAndControl.cpp.obj
+.PHONY : src/MenuAndControl.obj
+
+# target to build an object file
+src/MenuAndControl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.obj
+.PHONY : src/MenuAndControl.cpp.obj
+
+src/MenuAndControl.i: src/MenuAndControl.cpp.i
+.PHONY : src/MenuAndControl.i
+
+# target to preprocess a source file
+src/MenuAndControl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.i
+.PHONY : src/MenuAndControl.cpp.i
+
+src/MenuAndControl.s: src/MenuAndControl.cpp.s
+.PHONY : src/MenuAndControl.s
+
+# target to generate assembly for a file
+src/MenuAndControl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/MenuAndControl.cpp.s
+.PHONY : src/MenuAndControl.cpp.s
+
+src/NormalGame.obj: src/NormalGame.cpp.obj
+.PHONY : src/NormalGame.obj
+
+# target to build an object file
+src/NormalGame.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/NormalGame.cpp.obj
+.PHONY : src/NormalGame.cpp.obj
+
+src/NormalGame.i: src/NormalGame.cpp.i
+.PHONY : src/NormalGame.i
+
+# target to preprocess a source file
+src/NormalGame.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/NormalGame.cpp.i
+.PHONY : src/NormalGame.cpp.i
+
+src/NormalGame.s: src/NormalGame.cpp.s
+.PHONY : src/NormalGame.s
+
+# target to generate assembly for a file
+src/NormalGame.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/NormalGame.cpp.s
+.PHONY : src/NormalGame.cpp.s
+
+src/SlidingGame.obj: src/SlidingGame.cpp.obj
+.PHONY : src/SlidingGame.obj
+
+# target to build an object file
+src/SlidingGame.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/SlidingGame.cpp.obj
+.PHONY : src/SlidingGame.cpp.obj
+
+src/SlidingGame.i: src/SlidingGame.cpp.i
+.PHONY : src/SlidingGame.i
+
+# target to preprocess a source file
+src/SlidingGame.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/SlidingGame.cpp.i
+.PHONY : src/SlidingGame.cpp.i
+
+src/SlidingGame.s: src/SlidingGame.cpp.s
+.PHONY : src/SlidingGame.s
+
+# target to generate assembly for a file
+src/SlidingGame.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/SlidingGame.cpp.s
+.PHONY : src/SlidingGame.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -176,101 +248,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/menuAndControl.obj: src/menuAndControl.cpp.obj
-.PHONY : src/menuAndControl.obj
+src/utils.obj: src/utils.cpp.obj
+.PHONY : src/utils.obj
 
 # target to build an object file
-src/menuAndControl.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj
-.PHONY : src/menuAndControl.cpp.obj
+src/utils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/utils.cpp.obj
+.PHONY : src/utils.cpp.obj
 
-src/menuAndControl.i: src/menuAndControl.cpp.i
-.PHONY : src/menuAndControl.i
-
-# target to preprocess a source file
-src/menuAndControl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/menuAndControl.cpp.i
-.PHONY : src/menuAndControl.cpp.i
-
-src/menuAndControl.s: src/menuAndControl.cpp.s
-.PHONY : src/menuAndControl.s
-
-# target to generate assembly for a file
-src/menuAndControl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/menuAndControl.cpp.s
-.PHONY : src/menuAndControl.cpp.s
-
-src/normalGame.obj: src/normalGame.cpp.obj
-.PHONY : src/normalGame.obj
-
-# target to build an object file
-src/normalGame.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/normalGame.cpp.obj
-.PHONY : src/normalGame.cpp.obj
-
-src/normalGame.i: src/normalGame.cpp.i
-.PHONY : src/normalGame.i
+src/utils.i: src/utils.cpp.i
+.PHONY : src/utils.i
 
 # target to preprocess a source file
-src/normalGame.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/normalGame.cpp.i
-.PHONY : src/normalGame.cpp.i
+src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
 
-src/normalGame.s: src/normalGame.cpp.s
-.PHONY : src/normalGame.s
-
-# target to generate assembly for a file
-src/normalGame.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/normalGame.cpp.s
-.PHONY : src/normalGame.cpp.s
-
-src/slidingGame.obj: src/slidingGame.cpp.obj
-.PHONY : src/slidingGame.obj
-
-# target to build an object file
-src/slidingGame.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj
-.PHONY : src/slidingGame.cpp.obj
-
-src/slidingGame.i: src/slidingGame.cpp.i
-.PHONY : src/slidingGame.i
-
-# target to preprocess a source file
-src/slidingGame.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/slidingGame.cpp.i
-.PHONY : src/slidingGame.cpp.i
-
-src/slidingGame.s: src/slidingGame.cpp.s
-.PHONY : src/slidingGame.s
+src/utils.s: src/utils.cpp.s
+.PHONY : src/utils.s
 
 # target to generate assembly for a file
-src/slidingGame.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/slidingGame.cpp.s
-.PHONY : src/slidingGame.cpp.s
-
-src/utility.obj: src/utility.cpp.obj
-.PHONY : src/utility.obj
-
-# target to build an object file
-src/utility.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/utility.cpp.obj
-.PHONY : src/utility.cpp.obj
-
-src/utility.i: src/utility.cpp.i
-.PHONY : src/utility.i
-
-# target to preprocess a source file
-src/utility.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/utility.cpp.i
-.PHONY : src/utility.cpp.i
-
-src/utility.s: src/utility.cpp.s
-.PHONY : src/utility.s
-
-# target to generate assembly for a file
-src/utility.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/utility.cpp.s
-.PHONY : src/utility.cpp.s
+src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pikachu.dir\build.make CMakeFiles/pikachu.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
 
 # Help Target
 help:
@@ -281,24 +281,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... pikachu
-	@echo ... src/cell.obj
-	@echo ... src/cell.i
-	@echo ... src/cell.s
+	@echo ... src/Cell.obj
+	@echo ... src/Cell.i
+	@echo ... src/Cell.s
+	@echo ... src/MenuAndControl.obj
+	@echo ... src/MenuAndControl.i
+	@echo ... src/MenuAndControl.s
+	@echo ... src/NormalGame.obj
+	@echo ... src/NormalGame.i
+	@echo ... src/NormalGame.s
+	@echo ... src/SlidingGame.obj
+	@echo ... src/SlidingGame.i
+	@echo ... src/SlidingGame.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/menuAndControl.obj
-	@echo ... src/menuAndControl.i
-	@echo ... src/menuAndControl.s
-	@echo ... src/normalGame.obj
-	@echo ... src/normalGame.i
-	@echo ... src/normalGame.s
-	@echo ... src/slidingGame.obj
-	@echo ... src/slidingGame.i
-	@echo ... src/slidingGame.s
-	@echo ... src/utility.obj
-	@echo ... src/utility.i
-	@echo ... src/utility.s
+	@echo ... src/utils.obj
+	@echo ... src/utils.i
+	@echo ... src/utils.s
 .PHONY : help
 
 
