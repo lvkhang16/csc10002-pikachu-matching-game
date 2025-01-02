@@ -1,4 +1,4 @@
-#include "slidingGame.h"
+#include "SlidingGame.h"
 
 void SlidingGame::moveUp() // Moves cell upward
 {
