@@ -1,15 +1,13 @@
 #pragma once
 
-#include "utility.h"
+#include "utils.h"
+#include "MenuAndControl.h"
+#include "Cell.h"
 
-#include "menuAndControl.h"
-#include "cell.h"
-
-struct GAME
-{
-    PLAYER player;
+struct NormalGame {
+    Player player;
     int x = 1, y = 1;
-    CELL **board = NULL;
+    Cell **board = NULL;
     int height;
     int width;
     int remainingPairs;
@@ -35,8 +33,3 @@ struct GAME
     void moveRight();
     void moveLeft();
 };
-
-
-
-
-

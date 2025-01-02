@@ -1,10 +1,8 @@
-#include "menuAndControl.h"
+#include "MenuAndControl.h"
 
-// Printing
-
-void readAndPrintDecor(const string &fileName, int x, int y) // Read a text file containing decoration and prints it out
-{
-    string filePath = "..\\..\\assets\\" + fileName;
+// Read a text file containing decoration and prints it out
+void readAndPrintDecor(const string &fileName, int x, int y) {
+    string filePath = "..\\..\\assets\\graphics\\" + fileName;
     ifstream inputFile(filePath);
 
     HANDLE screen = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -26,8 +24,8 @@ void readAndPrintDecor(const string &fileName, int x, int y) // Read a text file
     }
 }
 
-void printBackground(int level) // Prints out the whole background behind the board at the start of a level
-{
+// Prints out the whole background behind the board at the start of a level
+void printBackground(int level) {
     fstream fs;
     string line;
 
@@ -35,19 +33,19 @@ void printBackground(int level) // Prints out the whole background behind the bo
 
     switch (level) {
         case 1:
-            fs.open("cataperie.txt");
+            fs.open("..\\..\\assets\\graphics\\cataperie.txt");
             startingX = 12;
             startingY = 4;
             setColor(10);
             break;
         case 2:
-            fs.open("ivysaur.txt");
+            fs.open("..\\..\\assets\\graphics\\ivysaur.txt");
             startingX = 12;
             startingY = 3;
             setColor(11);
             break;
         case 3:
-            fs.open("charizard.txt");
+            fs.open("..\\..\\assets\\graphics\\charizard.txt");
             startingX = 11;
             startingY = 2;
             setColor(12);
@@ -75,7 +73,7 @@ void printCellBackground(int level, int x, int y) {
 
     switch (level) {
         case 1:
-            fs.open("cataperie.txt");
+            fs.open("..\\..\\assets\\graphics\\cataperie.txt");
             paddingX = 7;
             paddingY = 8;
             paddingFileX = 3;
@@ -83,7 +81,7 @@ void printCellBackground(int level, int x, int y) {
             setColor(10);
             break;
         case 2:
-            fs.open("ivysaur.txt");
+            fs.open("..\\..\\assets\\graphics\\ivysaur.txt");
             paddingX = 4;
             paddingY = 6;
             paddingFileX = 0;
@@ -91,7 +89,7 @@ void printCellBackground(int level, int x, int y) {
             setColor(11);
             break;
         case 3:
-            fs.open("charizard.txt");
+            fs.open("..\\..\\assets\\graphics\\charizard.txt");
             paddingX = 2;
             paddingY = 3;
             paddingFileX = 0;
@@ -103,8 +101,7 @@ void printCellBackground(int level, int x, int y) {
     for (int i = 0; i < paddingFileY + (y - 1) * 4; i++)
         getline(fs, skipLine);
 
-    for (int i = 0; i < 5; i++)
-    {
+    for (int i = 0; i < 5; i++) {
         getline(fs, line);
         cellLine = line.substr(paddingFileX + (x - 1) * 8, 9);
         goTo(paddingX + x * 8, paddingY + y * 4 + i);
@@ -114,13 +111,13 @@ void printCellBackground(int level, int x, int y) {
     setColor(15);
 }
 
-void printIntro() // Prints out the Intro screen to the game
-{
+// Prints out the Intro screen to the game
+void printIntro() {
     setColor(6);
     readAndPrintDecor("matchinggame.txt", 77, 10);
 
     setColor(6);
-    readAndPrintDecor("introletter.txt", 77, 15);
+    readAndPrintDecor("pokemon_text.txt", 77, 15);
     
     setColor(12);
     readAndPrintDecor("intropokemon.txt", 12, 5);
@@ -136,8 +133,7 @@ void printIntro() // Prints out the Intro screen to the game
     goTo(77, 32);
     setColor(7);
 
-    for (int i = 0; i <= 70; i++)
-    {
+    for (int i = 0; i <= 70; i++) {
         cout << loadingCharacter;
         Sleep(100);
     }
@@ -146,8 +142,8 @@ void printIntro() // Prints out the Intro screen to the game
     system("cls");
 }
 
-void printMenuDecor() // Prints out the decoration for the Main Menu screen
-{
+// Prints out the decoration for the Main Menu screen
+void printMenuDecor() {
     setColor(15);
     readAndPrintDecor("menutitle.txt", 32, 2);
     setColor(15);
@@ -167,8 +163,7 @@ void printMenuDecor() // Prints out the decoration for the Main Menu screen
     readAndPrintDecor("bordern4.txt", 86, 32);
 }
 
-void printSideMenu() // Prints out a little menu showing instruction while playing
-{
+void printSideMenu() {
     setColor(6);
     readAndPrintDecor("bear.txt", 92, 3);
 
@@ -197,21 +192,20 @@ void printSideMenu() // Prints out a little menu showing instruction while playi
     cout << "shuffle! (costs 1 HP)";
 }
 
-void printTutorial() // Prints out 'Tutorial' screen
-{
+void printTutorialScreen() {
     system("cls");
     setColor(14);
     readAndPrintDecor("stars.txt", 6, 1);
     readAndPrintDecor("stars.txt", 93, 1);
     setColor(15);
-    readAndPrintDecor("tutorialborder.txt", 46, 6);
+    readAndPrintDecor("tutorial_table.txt", 46, 6);
 
     goTo(58, 36);
     cout << "Hit any key to return back to the main menu..." << endl;
     _getch();
 }
 
-int PLAYER::chooseMode() // Choose between 'normal' and 'sliding' mode
+int Player::chooseMode() // Choose between 'normal' and 'sliding' mode
 {
     int choice = 1;
 
@@ -219,11 +213,11 @@ int PLAYER::chooseMode() // Choose between 'normal' and 'sliding' mode
     {
         system("cls");
         setColor(15);
-        readAndPrintDecor("Game_Console.txt", 13, 5);
+        readAndPrintDecor("game_console.txt", 13, 5);
 
         setColor(15);
         goTo(30, 30);
-        readAndPrintDecor("Choose_Mode.txt", 58, 8);
+        readAndPrintDecor("choose_mode_text.txt", 58, 8);
 
         setColor(15);
         readAndPrintDecor("border.txt", 58, 20);
@@ -281,8 +275,7 @@ int PLAYER::chooseMode() // Choose between 'normal' and 'sliding' mode
                 }
                 break;
             case 77:
-                if (choice < 2)
-                {
+                if (choice < 2) {
                     choice++;
                 }
                 break;
@@ -290,21 +283,18 @@ int PLAYER::chooseMode() // Choose between 'normal' and 'sliding' mode
     }
 }
 
-int youWon(PLAYER &p) // Prints out 'You Won' screen
-{
+int printYouWonScreen(const Player &p) {
     int choice = 1;
-
-    switch (p.level)
-    {
+    switch (p.level) {
         case 1:
             system("cls");
             setColor(14);
             readAndPrintDecor("stars.txt", 6, 1);
             readAndPrintDecor("stars.txt", 93, 1);
             setColor(6);
-            readAndPrintDecor("Sponge.txt", 25, 10);
+            readAndPrintDecor("sponge.txt", 25, 10);
             setColor(12);
-            readAndPrintDecor("GameFinished.txt", 74, 12);
+            readAndPrintDecor("game_finished_text.txt", 74, 12);
 
             setColor(15);
             goTo(58, 36);
@@ -314,14 +304,13 @@ int youWon(PLAYER &p) // Prints out 'You Won' screen
             break;
         case 2:
         case 3:
-            while (true)
-            {
+            while (true) {
                 system("cls");
                 setColor(14);
                 readAndPrintDecor("stars.txt", 6, 1);
                 readAndPrintDecor("stars.txt", 93, 1);
                 setColor(10);
-                readAndPrintDecor("youwon.txt", 28, 7);
+                readAndPrintDecor("you_won_text.txt", 28, 7);
                 setColor(7);
                 goTo(30, 30);
                 readAndPrintDecor("continue.txt", 59, 20);
@@ -340,11 +329,9 @@ int youWon(PLAYER &p) // Prints out 'You Won' screen
 
                 char key = _getch();
 
-                switch (key)
-                {
+                switch (key) {
                     case 13: // Enter key
-                        switch (choice)
-                        {
+                        switch (choice) {
                             case 1: // Level up
                                 return 1;
                                 break;
@@ -355,14 +342,12 @@ int youWon(PLAYER &p) // Prints out 'You Won' screen
                         }
                         break;
                     case 72: // Up arrow key
-                        if (choice > 1)
-                        {
+                        if (choice > 1) {
                             choice--;
                         }
                         break;
                     case 80: // Down arrow key
-                        if (choice < 2)
-                        {
+                        if (choice < 2) {
                             choice++;
                         }
                         break;
@@ -370,19 +355,19 @@ int youWon(PLAYER &p) // Prints out 'You Won' screen
             }
             break;
     }
+
+    return -1;
 }
 
-int youLost(PLAYER &p) // Prints out 'You Lost' screen
-{
+int printYouLostScreen(Player &p) {
     int choice = 1;
 
-    while (true)
-    {
+    while (true) {
         system("cls");
         setColor(7);
         readAndPrintDecor("computer.txt", 20, 5);
         setColor(10);
-        readAndPrintDecor("gameover.txt", 43, 8);
+        readAndPrintDecor("game_over_text.txt", 43, 8);
 
         setColor(7);
         goTo(30, 30);
@@ -402,11 +387,9 @@ int youLost(PLAYER &p) // Prints out 'You Lost' screen
 
         char key = _getch();
 
-        switch (key)
-        {
+        switch (key) {
             case 13: // Enter key
-                switch (choice)
-                {
+                switch (choice) {
                     case 1:
                         // Replay
                         p.level = 1;
@@ -426,22 +409,18 @@ int youLost(PLAYER &p) // Prints out 'You Lost' screen
                 }
                 break;
             case 72: // Up arrow key
-                if (choice > 1)
-                {
+                if (choice > 1) 
                     choice--;
-                }
                 break;
             case 80: // Down arrow key
-                if (choice < 2)
-                {
+                if (choice < 2) 
                     choice++;
-                }
                 break;
         }
     }
 }
 
-void PLAYER::printStatusBar() // Prints out a little bar showing the player's current score and HP
+void Player::printStatusBar() // Prints out a little bar showing the player's current score and HP
 {
     goTo(96, 9);
     cout << "Score: " << currentScore << "   ";
@@ -449,7 +428,7 @@ void PLAYER::printStatusBar() // Prints out a little bar showing the player's cu
     cout << "HP: " << life << "    ";
 }
 
-int PLAYER::signIn() // Prints out the screen for signing in
+int Player::signIn() // Prints out the screen for signing in
 {
     int option = 0;
 
@@ -458,7 +437,7 @@ int PLAYER::signIn() // Prints out the screen for signing in
     readAndPrintDecor("stars.txt", 6, 1);
     readAndPrintDecor("stars.txt", 93, 1);
     setColor(15);
-    readAndPrintDecor("signinborder.txt", 40, 8);
+    readAndPrintDecor("sign_in_frame.txt", 40, 8);
     goTo(60, 16);
     cout << "Please enter the username and password " << endl;
     goTo(64, 20);
@@ -535,20 +514,22 @@ int PLAYER::signIn() // Prints out the screen for signing in
             readAndPrintDecor("stars.txt", 6, 1);
             readAndPrintDecor("stars.txt", 93, 1);
             setColor(15);
-            readAndPrintDecor("welcome.txt", 60, 16);
+            readAndPrintDecor("welcome_text.txt", 60, 16);
             Sleep(300);
             return 3;
     }
+
+    return -1;
 }
 
-int PLAYER::signUp() // Prints out the screen for signing up
-{
+// Prints out the screen for signing up
+int Player::signUp() {
     system("cls");
     setColor(14);
     readAndPrintDecor("stars.txt", 6, 1);
     readAndPrintDecor("stars.txt", 93, 1);
     setColor(15);
-    readAndPrintDecor("signupborder.txt", 47, 6);
+    readAndPrintDecor("sign_up_frame.txt", 47, 6);
     goTo(67, 17);
     cout << "Your username: ";
     getline(cin, username);
@@ -556,7 +537,7 @@ int PLAYER::signUp() // Prints out the screen for signing up
     cout << "Your password: ";
     getline(cin, password);
 
-    fstream fs("PlayersData.txt", ios::out | ios::app);
+    fstream fs("..\\..\\assets\\players_database.txt", ios::out | ios::app);
     if (fs)
     {
         if (getInfo() == 2 || getInfo() == 3) // Username already existed, unable to create an account
@@ -591,63 +572,56 @@ int PLAYER::signUp() // Prints out the screen for signing up
     }
 }
 
-int PLAYER::getInfo()
-{
-    fstream fs("PlayersData.txt", ios::in);
+int Player::getInfo() {
+    fstream fs("..\\..\\assets\\data\\players_database.txt", ios::in);
     string getUsername, getPassword, skipLine;
     char skipChar;
 
-    if (!fs)
-    {
+    if (!fs) {
         return 0;
     }
 
-    while (getUsername != username && !fs.eof())
-    {
+    while (getUsername != username && !fs.eof()) {
         getline(fs, skipLine);
         getline(fs, getUsername, ',');
         getline(fs, getPassword, ',');
     }
 
-    if (getUsername != username) // No such player in database
-    {
+    // No such player in database
+    if (getUsername != username) {
+        fs.close();
         return 1;
-    }
-    else
-    {
-        if (getPassword != password) // Wrong password
-        {
+    } else {
+        // Wrong password
+        if (getPassword != password) {
             password = getPassword;
+            fs.close();
             return 2;
-        }
-
-        else // Correct information
-        {
+        } else {
+            // Correct information
             getline(fs, mode, ',');
             fs >> level >> skipChar;
             fs >> currentScore >> skipChar;
             fs >> highestScore >> skipChar;
             fs >> life >> skipChar;
             fs >> comboFactor;
+            fs.close();
             return 3;
         }
     }
 
-    fs.close();
+    return -1;
 }
 
-bool comparePlayerScores(PLAYER p1, PLAYER p2)
-{
+bool comparePlayerScores(const Player& p1, const Player& p2) {
     return p1.highestScore > p2.highestScore;
 }
 
-void sortLeaderboard(PLAYER leaderboard[], int n)
-{
+void sortLeaderboard(Player leaderboard[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (comparePlayerScores(leaderboard[j + 1], leaderboard[j]))
-            {
-                PLAYER temp = leaderboard[j];
+            if (comparePlayerScores(leaderboard[j + 1], leaderboard[j])) {
+                Player temp = leaderboard[j];
                 leaderboard[j] = leaderboard[j + 1];
                 leaderboard[j + 1] = temp;
             }
@@ -655,14 +629,13 @@ void sortLeaderboard(PLAYER leaderboard[], int n)
     }
 }
 
-void showLeaderboard(PLAYER leaderboard[])
-{
+void showLeaderboard(Player leaderboard[]) {
     system("cls");
     setColor(14);
     readAndPrintDecor("stars.txt", 6, 1);
     readAndPrintDecor("stars.txt", 93, 1);
     setColor(15);
-    readAndPrintDecor("leaderboard.txt", 18, 2);
+    readAndPrintDecor("leaderboard_text.txt", 18, 2);
     setColor(15);
     readAndPrintDecor("line.txt", 5, 10);
     setColor(15);
@@ -676,13 +649,12 @@ void showLeaderboard(PLAYER leaderboard[])
     readAndPrintDecor("line.txt", 5, 13);
     cout << "\n\n";
 
-    fstream fs("PlayersData.txt", ios::in);
+    fstream fs("..\\..\\assets\\data\\players_database.txt", ios::in);
     string skipLine, getHighestScore, token;
 
     int n = 0;
     getline(fs, skipLine); // Skip the first line
-    while (getline(fs, leaderboard[n].username, ','))
-    {
+    while (getline(fs, leaderboard[n].username, ',')) {
         for (int i = 0; i < 4; i++)
             getline(fs, token, ',');
         fs >> leaderboard[n].highestScore;
@@ -693,18 +665,13 @@ void showLeaderboard(PLAYER leaderboard[])
     sortLeaderboard(leaderboard, n);
 
     int rank = 1, numberToShow;
-
-    if (n < 10)
-    {
+    if (n < 10) {
         numberToShow = n;
-    }
-    else
-    {
+    } else {
         numberToShow = 10;
     }
 
-    for (int i = 0; i < numberToShow * 2; i += 2)
-    {
+    for (int i = 0; i < numberToShow * 2; i += 2) {
         goTo(20, 15 + i);
         cout << rank;
         goTo(52, 15 + i);
@@ -720,14 +687,12 @@ void showLeaderboard(PLAYER leaderboard[])
     char key = _getch();
 }
 
-int PLAYER::printMenu(PLAYER leaderboard[]) // Prints out the main menu screen
-{
+// Prints out the main menu screen
+int Player::printMenu() {
     playBackgroundMusic();
 
     int choice = 1;
-
-    while (true)
-    {
+    while (true) {
         system("cls");
         printMenuDecor();
         setColor(15);
@@ -740,11 +705,9 @@ int PLAYER::printMenu(PLAYER leaderboard[]) // Prints out the main menu screen
         goTo(83, 34);
         cout << (choice == 4 ? ">> " : "  ") << endl;
 
-        switch (_getch())
-        {
+        switch (_getch()) {
             case 13: // Click 'Enter'
-                switch (choice)
-                {
+                switch (choice) {
                     case 1: // Sign in
                         return 1;
                         break;
@@ -760,14 +723,12 @@ int PLAYER::printMenu(PLAYER leaderboard[]) // Prints out the main menu screen
                 }
                 break;
             case 72: // Up arrow key
-                if (choice > 1)
-                {
+                if (choice > 1) {
                     choice--;
                 }
                 break;
             case 80: // Down arrow key
-                if (choice < 4)
-                {
+                if (choice < 4) {
                     choice++;
                 }
                 break;
@@ -775,12 +736,11 @@ int PLAYER::printMenu(PLAYER leaderboard[]) // Prints out the main menu screen
     }
 }
 
-void PLAYER::updatePlayer() //Update the player's info to the file PlayersData.txt
-{
-    fstream input("PlayersData.txt", ios::in);
-    fstream output("PlayersData2.txt", ios::out);
-    if (!input || !output)
-    {
+// Updates the player's info to the file players_database.txt
+void Player::updatePlayer() {
+    fstream input("..\\..\\assets\\data\\players_database.txt", ios::in);
+    fstream output("..\\..\\assets\\data\\PlayersData2.txt", ios::out);
+    if (!input || !output) {
         cout << "Unable to update player's data!\n";
         return;
     }
@@ -788,31 +748,28 @@ void PLAYER::updatePlayer() //Update the player's info to the file PlayersData.t
     string getUsername, getPassword, skipLine, line;
     char skipChar;
 
-    getline(input, line); // Take in first line
+    getline(input, line); // Ignore first line
     output << line << '\n';
 
     getline(input, getUsername, ',');
-    while (getUsername != username)
-    {
+    while (getUsername != username) {
         output << getUsername << ',';
         getline(input, line);
         output << line << '\n';
         getline(input, getUsername, ',');
     }
 
-
     output << username << ',' << password << ',' << mode << ',' << level << ',' << currentScore << ',' << highestScore << ',' << life << ',' << comboFactor << '\n';
 
     getline(input, skipLine);
 
-    while (getline(input, line))
-    {
+    while (getline(input, line)) {
         output << line << '\n';
     }
 
     input.close();
     output.close();
 
-    remove("PlayersData.txt");
-    rename("PlayersData2.txt", "PlayersData.txt");
+    remove("..\\..\\assets\\data\\players_database.txt");
+    rename("..\\..\\assets\\data\\PlayersData2.txt", "..\\..\\assets\\data\\players_database.txt");
 }

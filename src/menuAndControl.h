@@ -1,9 +1,8 @@
 #pragma once
 
-#include "utility.h"
+#include "utils.h"
 
-struct PLAYER
-{
+struct Player {
     string username, password, mode;
     int currentScore, highestScore, life, level;
     float comboFactor;
@@ -13,32 +12,20 @@ struct PLAYER
     int signUp();
     int chooseMode();
 
-
-    int printMenu(PLAYER leaderboard[]);
+    int printMenu();
     void printStatusBar();
     void updatePlayer();
 };
 
 void readAndPrintDecor(const string &fileName, int x, int y);
-
 void printBackground(int level);
-
 void printCellBackground(int level, int x, int y);
-
 void printIntro();
-
 void printMenuDecor();
-
 void printSideMenu();
-
-void printTutorial();
-
-int youWon(PLAYER &p);
-
-int youLost(PLAYER &p);
-
-bool comparePlayerScores(PLAYER p1, PLAYER p2);
-
-void sortLeaderboard(PLAYER leaderboard[], int n);
-
-void showLeaderboard(PLAYER leaderboard[]);
+void printTutorialScreen();
+int printYouWonScreen(const Player &p);
+int printYouLostScreen(Player &p);
+bool comparePlayerScores(const Player& p1, const Player& p2);
+void sortLeaderboard(Player leaderboard[], int n);
+void showLeaderboard(Player leaderboard[]);

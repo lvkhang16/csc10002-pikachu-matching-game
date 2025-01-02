@@ -1,6 +1,6 @@
 #include "slidingGame.h"
 
-void SUPER_GAME::moveUp() // Moves cell upward
+void SlidingGame::moveUp() // Moves cell upward
 {
     for (int i = x; i <= width; i++)
     {
@@ -12,7 +12,7 @@ void SUPER_GAME::moveUp() // Moves cell upward
                 x = i;
                 y = j;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
@@ -28,14 +28,14 @@ void SUPER_GAME::moveUp() // Moves cell upward
                 x = i;
                 y = j;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-void SUPER_GAME::moveDown() // Moves cell downward
+void SlidingGame::moveDown() // Moves cell downward
 {
     for (int i = x; i <= width; i++)
     {
@@ -47,7 +47,7 @@ void SUPER_GAME::moveDown() // Moves cell downward
                 x = i;
                 y = j;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
@@ -63,15 +63,14 @@ void SUPER_GAME::moveDown() // Moves cell downward
                 x = i;
                 y = j;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
-
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-void SUPER_GAME::moveRight() // Moves cell to the right
+void SlidingGame::moveRight() // Moves cell to the right
 {
     for (int i = y; i >= 1; i--)
     {
@@ -83,7 +82,7 @@ void SUPER_GAME::moveRight() // Moves cell to the right
                 x = j;
                 y = i;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
@@ -97,14 +96,14 @@ void SUPER_GAME::moveRight() // Moves cell to the right
                 x = j;
                 y = i;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-void SUPER_GAME::moveLeft() // Moves cell to the left
+void SlidingGame::moveLeft() // Moves cell to the left
 {
     for (int i = y; i >= 1; i--)
     {
@@ -116,7 +115,7 @@ void SUPER_GAME::moveLeft() // Moves cell to the left
                 x = j;
                 y = i;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
@@ -132,19 +131,19 @@ void SUPER_GAME::moveLeft() // Moves cell to the left
                 x = j;
                 y = i;
                 findNode(x, y)->isHovered = true;
-                PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-SUPER_CELL *SUPER_GAME::findNode(int x, int y) // For accessing a specific cell, it returns the pointer to the cell at a specific coordinates. If that cell no longer exists, the function returns false
+SlidingCell *SlidingGame::findNode(int x, int y) // For accessing a specific cell, it returns the pointer to the cell at a specific coordinates. If that cell no longer exists, the function returns false
 {
     if (y < 1 || y > height || x < 1 || x > width)
         return NULL;
 
-    SUPER_CELL *temp = board[y - 1];
+    SlidingCell *temp = board[y - 1];
     while (temp != NULL)
     {
         if (temp->j == (x - 1))
@@ -156,9 +155,9 @@ SUPER_CELL *SUPER_GAME::findNode(int x, int y) // For accessing a specific cell,
     return NULL;
 }
 
-void SUPER_GAME::deleteNode(int x, int y) // For deleting a cell
+void SlidingGame::deleteNode(int x, int y) // For deleting a cell
 {
-    SUPER_CELL *p = findNode(x, y);
+    SlidingCell *p = findNode(x, y);
 
     if (x == 1)
     {
@@ -174,7 +173,7 @@ void SUPER_GAME::deleteNode(int x, int y) // For deleting a cell
             board[y - 1] = p->next;
 
 
-            SUPER_CELL *temp = board[y - 1];
+            SlidingCell *temp = board[y - 1];
             while (temp->next != NULL)
             {
                 temp->j--;
@@ -192,12 +191,12 @@ void SUPER_GAME::deleteNode(int x, int y) // For deleting a cell
     }
     else
     {
-        SUPER_CELL *q = findNode(x - 1, y);
+        SlidingCell *q = findNode(x - 1, y);
         q->next = p->next;
 
         if (p->next != NULL)
         {
-            SUPER_CELL *temp = p->next;
+            SlidingCell *temp = p->next;
             while (temp->next != NULL)
             {
                 temp->j--;
@@ -215,7 +214,7 @@ void SUPER_GAME::deleteNode(int x, int y) // For deleting a cell
     }
 }
 
-bool SUPER_GAME::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is an empty or unobstructed path between to cells
+bool SlidingGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is an empty or unobstructed path between to cells
 {
     if (y1 == y2) {
         int a, b, count = 0;
@@ -274,7 +273,7 @@ bool SUPER_GAME::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if ther
     return false;
 }
 
-bool SUPER_GAME::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped matching
+bool SlidingGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped matching
 {
     if (y1 == y2) {
         int a, b;
@@ -312,7 +311,7 @@ bool SUPER_GAME::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shap
     return false;
 }
 
-bool SUPER_GAME::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped matching
+bool SlidingGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped matching
 {
     if (y1 == y2 || x1 == x2)
     {
@@ -342,7 +341,7 @@ bool SUPER_GAME::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shap
     return false;
 }
 
-bool SUPER_GAME::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped matching
+bool SlidingGame::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped matching
 {
     if (y1 == y2 || x1 == x2)
     {
@@ -379,7 +378,7 @@ bool SUPER_GAME::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shap
     return false;
 }
 
-bool SUPER_GAME::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped matching
+bool SlidingGame::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped matching
 {
     if (((y1 == y2) && (y1 == 1 || y1 == height) || ((x1 == x2) && (x1 == 1 || x1 == width))))
     {
@@ -440,7 +439,7 @@ bool SUPER_GAME::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shap
     return false;
 }
 
-bool SUPER_GAME::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all matchings
+bool SlidingGame::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all matchings
 {
     if (checkIMatching(x1, y1, x2, y2))
         return true;
@@ -453,7 +452,7 @@ bool SUPER_GAME::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all
     return false;
 }
 
-bool SUPER_GAME::checkValidPairs() // Checks whether there is any pair that can be matched
+bool SlidingGame::checkValidPairs() // Checks whether there is any pair that can be matched
 {
     char character = 'A';
     while (character >= 'A' && character <= 'Z')
@@ -492,7 +491,7 @@ bool SUPER_GAME::checkValidPairs() // Checks whether there is any pair that can 
     return false;
 }
 
-int SUPER_GAME::play() // Start game
+int SlidingGame::play() // Start game
 {
     system("cls");
     PlaySound(NULL, NULL, 0);
@@ -502,7 +501,7 @@ int SUPER_GAME::play() // Start game
     int temp, key;
     int count = 0;
     int selected = 0;
-    POSITION selectedPos[2];
+    Position selectedPos[2];
 
     printSideMenu();
     printBackground(player.level);
@@ -517,7 +516,7 @@ int SUPER_GAME::play() // Start game
         {
             Sleep(500);
 
-            if (youLost(player) == 1)
+            if (printYouLostScreen(player) == 1)
             {
                 player.updatePlayer();
                 return 1;
@@ -542,7 +541,7 @@ int SUPER_GAME::play() // Start game
             while (!checkValidPairs())
                 shuffleBoard();
 
-            PlaySound(TEXT("shuffle.wav"), NULL, SND_FILENAME | SND_ASYNC);
+            playSound("shuffle.wav");
         }
 
         if (findNode(x, y) == NULL) // Find a valid cell if the cell we are hovering on no longer exists
@@ -600,9 +599,8 @@ int SUPER_GAME::play() // Start game
                 selectedPos[selected].y = y;
                 selected++;
 
-                if (selected == 1)
-                {
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                if (selected == 1) {
+                    playSound("select.wav");
                 }
 
                 if (selected == 2)
@@ -656,13 +654,11 @@ int SUPER_GAME::play() // Start game
                                 player.currentScore += 10 * player.comboFactor;
                                 player.comboFactor += 0.1;
                                 player.printStatusBar();
-                            }
-                            else
-                            {
+                            } else {
                                 findNode(selectedPos[0].x, selectedPos[0].y)->isSelected = false;
                                 findNode(selectedPos[1].x, selectedPos[1].y)->isSelected = false;
 
-                                PlaySound(TEXT("assets\\wrongMatch.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                                playSound("wrong_match.wav");
                                 player.life--;
                                 player.comboFactor = 1.0;
                                 player.printStatusBar();
@@ -678,7 +674,7 @@ int SUPER_GAME::play() // Start game
                             findNode(selectedPos[0].x, selectedPos[0].y)->isSelected = false;
                             findNode(selectedPos[1].x, selectedPos[1].y)->isSelected = false;
 
-                            PlaySound(TEXT("wrongMatch.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                            playSound("wrong_match.wav");
                             player.life--;
                             player.comboFactor = 1.0;
                             player.printStatusBar();
@@ -716,15 +712,12 @@ int SUPER_GAME::play() // Start game
     if (player.currentScore > player.highestScore)
         player.highestScore = player.currentScore;
 
-    if (player.level == 3)
-    {
+    if (player.level == 3) {
         player.currentScore = 0;
         player.level = 1;
         player.life = 10;
         player.comboFactor = 1.0;
-    }
-    else
-    {
+    } else {
         player.level++;
         player.comboFactor = 1.0;
     }
@@ -734,7 +727,7 @@ int SUPER_GAME::play() // Start game
     Sleep(500);
 
     system("cls");
-    switch (youWon(player))
+    switch (printYouWonScreen(player))
     {
         case 1:
             return 1;
@@ -743,12 +736,13 @@ int SUPER_GAME::play() // Start game
         case 3:
             return 3;
     }
+
+    return -1;
 }
 
-void SUPER_GAME::initialize() // Initializing the board
-{
-    switch (player.level) // Getting the number of cells based on the player's level
-    {
+void SlidingGame::initialize() {
+    // Getting the number of cells based on the player's level
+    switch (player.level) {
         case 1:
             height = 4;
             width = 7;
@@ -765,14 +759,11 @@ void SUPER_GAME::initialize() // Initializing the board
 
     remainingPairs = (height * width) / 2;
 
-    board = new SUPER_CELL * [height];
-
-    for (int i = 0; i < height; i++)
-    {
+    board = new SlidingCell * [height];
+    for (int i = 0; i < height; i++) {
         board[i] = NULL;
-        for (int j = 0; j < width; j++)
-        {
-            SUPER_CELL *p = new SUPER_CELL;
+        for (int j = 0; j < width; j++) {
+            SlidingCell *p = new SlidingCell;
             p->i = i;
             p->j = j;
             p->next = NULL;
@@ -781,17 +772,15 @@ void SUPER_GAME::initialize() // Initializing the board
     }
 
     int pairNum = (height * width) / 2;
-    while (pairNum)
-    {
+    while (pairNum) {
         int i, j, cells = 2;
         char character = 65 + rand() % 26; // Getting a random character
-        while (cells) // Assign a pair
-        {
+        // Assign a pair
+        while (cells) {
             i = rand() % height;
             j = rand() % width;
-            SUPER_CELL *p = findNode(j + 1, i + 1);
-            if (p->character == ' ')
-            {
+            SlidingCell *p = findNode(j + 1, i + 1);
+            if (p->character == ' ') {
                 p->character = character;
                 cells--;
             }
@@ -800,26 +789,21 @@ void SUPER_GAME::initialize() // Initializing the board
     }
 }
 
-void SUPER_GAME::printBoard() // Prints out the game board
-{
-    for (int i = 0; i < height; i++)
-    {
-        SUPER_CELL *temp = board[i];
-        while (temp != NULL)
-        {
+void SlidingGame::printBoard() {
+    for (int i = 0; i < height; i++) {
+        SlidingCell *temp = board[i];
+        while (temp != NULL) {
             temp->drawBox(player.level);
             temp = temp->next;
         }
     }
 }
 
-void SUPER_GAME::shuffleBoard() // Shuffles the board when there is no valid pair left
-{
-    for (int i = 0; i < height; i++)
-    {
-        SUPER_CELL *temp = board[i];
-        while (temp != NULL)
-        {
+// Shuffles the board when there is no valid pair left
+void SlidingGame::shuffleBoard() {
+    for (int i = 0; i < height; i++) {
+        SlidingCell *temp = board[i];
+        while (temp != NULL) {
             temp->character = ' ';
             temp = temp->next;
         }
@@ -827,8 +811,7 @@ void SUPER_GAME::shuffleBoard() // Shuffles the board when there is no valid pai
 
     int temp = remainingPairs;
 
-    while (temp)
-    {
+    while (temp) {
         int index, cells = 2;
         char character = 'A' + rand() % 26;
         while (cells)
@@ -848,32 +831,25 @@ void SUPER_GAME::shuffleBoard() // Shuffles the board when there is no valid pai
 
 }
 
-void SUPER_GAME::suggestMove() // Suggest a valid pair to the player, costing 1 HP
-{
+// Suggest a valid pair to the player, costing 1 HP
+void SlidingGame::suggestMove() {
     char character = 'A';
-    while (character >= 'A' && character <= 'Z')
-    {
+    while (character >= 'A' && character <= 'Z') {
         int count = 0;
         int *pos = new int[remainingPairs * 2 * 2];
-        for (int i = 0; i < height; i++)
-        {
-            for (int j = 0; j < width; j++)
-            {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 if (findNode(j + 1, i + 1) != NULL)
-                    if (findNode(j + 1, i + 1)->character == character)
-                    {
+                    if (findNode(j + 1, i + 1)->character == character) {
                         pos[count++] = i;
                         pos[count++] = j;
                     }
             }
         }
 
-        for (int i = 0; i < count - 2; i += 2)
-        {
-            for (int j = i + 2; j < count; j += 2)
-            {
-                if (checkAllMatchings(pos[i + 1] + 1, pos[i] + 1, pos[j + 1] + 1, pos[j] + 1))
-                {
+        for (int i = 0; i < count - 2; i += 2) {
+            for (int j = i + 2; j < count; j += 2) {
+                if (checkAllMatchings(pos[i + 1] + 1, pos[i] + 1, pos[j + 1] + 1, pos[j] + 1)) {
                     findNode(pos[i + 1] + 1, pos[i] + 1)->isSuggested = true;
                     findNode(pos[j + 1] + 1, pos[j] + 1)->isSuggested = true;
 
@@ -887,13 +863,11 @@ void SUPER_GAME::suggestMove() // Suggest a valid pair to the player, costing 1 
     }
 }
 
-void SUPER_GAME::turnOffSuggestions() // Turns off the suggestion if the player don't match the suggested pair
-{
-    for (int i = 0; i < height; i++)
-    {
-        SUPER_CELL *temp = board[i];
-        while (temp != NULL)
-        {
+// Turns off the suggestion if the player don't match the suggested pair
+void SlidingGame::turnOffSuggestions() {
+    for (int i = 0; i < height; i++) {
+        SlidingCell *temp = board[i];
+        while (temp != NULL) {
             if (temp->isSuggested == true)
                 temp->isSuggested = false;
             temp = temp->next;

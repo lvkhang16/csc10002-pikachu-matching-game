@@ -1,15 +1,13 @@
 #pragma once
 
-#include "utility.h"
+#include "utils.h"
+#include "MenuAndControl.h"
+#include "Cell.h"
 
-#include "menuAndControl.h"
-#include "cell.h"
-
-struct SUPER_GAME
-{
-    PLAYER player;
+struct SlidingGame {
+    Player player;
     int x = 1, y = 1;
-    SUPER_CELL **board = NULL;
+    SlidingCell **board = NULL;
     int height;
     int width;
     int remainingPairs;
@@ -22,7 +20,7 @@ struct SUPER_GAME
     bool checkAllMatchings(int x1, int y1, int x2, int y2);
     bool checkValidPairs();
 
-    SUPER_CELL *findNode(int x, int y);
+    SlidingCell *findNode(int x, int y);
     void deleteNode(int x, int y);
 
     void initialize();

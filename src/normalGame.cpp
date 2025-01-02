@@ -1,89 +1,70 @@
 #include "normalGame.h"
 
-
-void GAME::moveUp() // Moves cell upward
-{
-    for (int i = x; i <= width; i++)
-    {
-        for (int j = y - 1; j >= 1; j--)
-        {
-            if (board[j - 1][i - 1].isValid)
-            {
+void NormalGame::moveUp() {
+    for (int i = x; i <= width; i++) {
+        for (int j = y - 1; j >= 1; j--) {
+            if (board[j - 1][i - 1].isValid) {
                 board[y - 1][x - 1].isHovered = false;
                 x = i;
                 y = j;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 
-    for (int i = x - 1; i >= 1; i--)
-    {
-        for (int j = y - 1; j >= 1; j--)
-        {
-            if (board[j - 1][i - 1].isValid)
-            {
+    for (int i = x - 1; i >= 1; i--) {
+        for (int j = y - 1; j >= 1; j--) {
+            if (board[j - 1][i - 1].isValid) {
                 board[y - 1][x - 1].isHovered = false;
                 x = i;
                 y = j;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-void GAME::moveDown() // Moves cell downward
-{
-    for (int i = x; i <= width; i++)
-    {
-        for (int j = y + 1; j <= height; j++)
-        {
-            if (board[j - 1][i - 1].isValid)
-            {
+void NormalGame::moveDown() {
+    for (int i = x; i <= width; i++) {
+        for (int j = y + 1; j <= height; j++) {
+            if (board[j - 1][i - 1].isValid) {
                 board[y - 1][x - 1].isHovered = false;
                 x = i;
                 y = j;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 
-    for (int i = x - 1; i >= 1; i--)
-    {
-        for (int j = y + 1; j <= height; j++)
-        {
-            if (board[j - 1][i - 1].isValid)
-            {
+    for (int i = x - 1; i >= 1; i--) {
+        for (int j = y + 1; j <= height; j++) {
+            if (board[j - 1][i - 1].isValid) {
                 board[y - 1][x - 1].isHovered = false;
                 x = i;
                 y = j;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-void GAME::moveRight() // Moves cell to the right
-{
-    for (int i = y; i >= 1; i--)
-    {
-        for (int j = x + 1; j <= width; j++)
-        {
-            if (board[i - 1][j - 1].isValid)
-            {
+void NormalGame::moveRight() {
+    for (int i = y; i >= 1; i--) {
+        for (int j = x + 1; j <= width; j++) {
+            if (board[i - 1][j - 1].isValid) {
                 board[y - 1][x - 1].isHovered = false;
                 x = j;
                 y = i;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
@@ -97,26 +78,22 @@ void GAME::moveRight() // Moves cell to the right
                 x = j;
                 y = i;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("..\\assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-void GAME::moveLeft() // Moves cell to the left
-{
-    for (int i = y; i >= 1; i--)
-    {
-        for (int j = x - 1; j >= 1; j--)
-        {
-            if (board[i - 1][j - 1].isValid)
-            {
+void NormalGame::moveLeft() {
+    for (int i = y; i >= 1; i--) {
+        for (int j = x - 1; j >= 1; j--) {
+            if (board[i - 1][j - 1].isValid) {
                 board[y - 1][x - 1].isHovered = false;
                 x = j;
                 y = i;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
@@ -132,14 +109,14 @@ void GAME::moveLeft() // Moves cell to the left
                 x = j;
                 y = i;
                 board[y - 1][x - 1].isHovered = true;
-                PlaySound(TEXT("assets\\move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                playSound("move.wav");
                 return;
             }
         }
     }
 }
 
-bool GAME::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is an empty or unobstructed path between to cells
+bool NormalGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is an empty or unobstructed path between to cells
 {
     if (y1 == y2) {
         int a, b, count = 0;
@@ -198,7 +175,7 @@ bool GAME::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is a
     return false;
 }
 
-bool GAME::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped matching
+bool NormalGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped matching
 {
     if (y1 == y2) {
         int a, b;
@@ -236,7 +213,7 @@ bool GAME::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped mat
     return false;
 }
 
-bool GAME::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped matching
+bool NormalGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped matching
 {
     if (y1 == y2 || x1 == x2)
     {
@@ -266,7 +243,7 @@ bool GAME::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped mat
     return false;
 }
 
-bool GAME::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped matching
+bool NormalGame::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped matching
 {
     if (y1 == y2 || x1 == x2)
     {
@@ -303,7 +280,7 @@ bool GAME::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped mat
     return false;
 }
 
-bool GAME::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped matching
+bool NormalGame::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped matching
 {
     if (((y1 == y2) && (y1 == 1 || y1 == height)) || ((x1 == x2) && (x1 == 1 || x1 == width)))
     {
@@ -364,7 +341,7 @@ bool GAME::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped mat
     return false;
 }
 
-bool GAME::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all matchings
+bool NormalGame::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all matchings
 {
     if (checkIMatching(x1, y1, x2, y2))
         return true;
@@ -377,7 +354,7 @@ bool GAME::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all match
     return false;
 }
 
-bool GAME::checkValidPairs() // Checks whether there is any pair that can be matched
+bool NormalGame::checkValidPairs() // Checks whether there is any pair that can be matched
 {
     char character = 'A';
     while (character >= 'A' && character <= 'Z')
@@ -413,7 +390,7 @@ bool GAME::checkValidPairs() // Checks whether there is any pair that can be mat
     return false;
 }
 
-int GAME::play() // Start game
+int NormalGame::play() // Start game
 {
     system("cls");
     PlaySound(NULL, NULL, 0);
@@ -423,7 +400,7 @@ int GAME::play() // Start game
     int temp, key;
     int count = 0;
     int selected = 0;
-    POSITION selectedPos[2];
+    Position selectedPos[2];
 
     printSideMenu();
     printBackground(player.level);
@@ -438,7 +415,7 @@ int GAME::play() // Start game
         {
             Sleep(500);
 
-            if (youLost(player) == 1)
+            if (printYouLostScreen(player) == 1)
             {
                 player.updatePlayer();
                 return 1;
@@ -461,8 +438,7 @@ int GAME::play() // Start game
 
             while (!checkValidPairs())
                 shuffleBoard();
-
-            PlaySound(TEXT("shuffle.wav"), NULL, SND_FILENAME | SND_ASYNC);
+            playSound("shuffle.wav");
         }
 
         if (!board[y - 1][x - 1].isValid) // Find a valid cell if the cell we are hovering on no longer exists
@@ -519,24 +495,20 @@ int GAME::play() // Start game
                 selectedPos[selected].y = y;
                 selected++;
 
-                if (selected == 1)
-                {
-                    PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                if (selected == 1) {
+                    playSound("select.wav");
                 }
 
-                if (selected == 2)
-                {
-                    if (!(selectedPos[0].x == selectedPos[1].x && selectedPos[0].y == selectedPos[1].y)) // Check if two cells are not at the same spot
-                    {
-                        if (board[selectedPos[0].y - 1][selectedPos[0].x - 1].character == board[selectedPos[1].y - 1][selectedPos[1].x - 1].character)
-                        {
-                            if (checkAllMatchings(selectedPos[0].x, selectedPos[0].y, selectedPos[1].x, selectedPos[1].y)) // They can match
-                            {
-                                PlaySound(TEXT("select.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                if (selected == 2) {
+                    // Check if two cells are not at the same spot
+                    if (!(selectedPos[0].x == selectedPos[1].x && selectedPos[0].y == selectedPos[1].y)) {
+                        if (board[selectedPos[0].y - 1][selectedPos[0].x - 1].character == board[selectedPos[1].y - 1][selectedPos[1].x - 1].character) {
+                            // Check if they can match
+                            if (checkAllMatchings(selectedPos[0].x, selectedPos[0].y, selectedPos[1].x, selectedPos[1].y)) { 
+                                playSound("select.wav");
 
                                 board[selectedPos[0].y - 1][selectedPos[0].x - 1].drawBox(player.level, 10);
                                 board[selectedPos[1].y - 1][selectedPos[1].x - 1].drawBox(player.level, 10);
-
                                 Sleep(200);
 
                                 board[selectedPos[0].y - 1][selectedPos[0].x - 1].deleteBox(player.level);
@@ -555,8 +527,7 @@ int GAME::play() // Start game
                                 player.comboFactor += 0.1;
                                 player.printStatusBar();
                             }
-                            else
-                            {
+                            else {
                                 board[selectedPos[0].y - 1][selectedPos[0].x - 1].drawBox(player.level, 12);
                                 board[selectedPos[1].y - 1][selectedPos[1].x - 1].drawBox(player.level, 12);
 
@@ -565,14 +536,13 @@ int GAME::play() // Start game
                                 board[selectedPos[0].y - 1][selectedPos[0].x - 1].isSelected = false;
                                 board[selectedPos[1].y - 1][selectedPos[1].x - 1].isSelected = false;
 
-                                PlaySound(TEXT("wrongMatch.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                                playSound("wrong_match.wav");
                                 player.life--;
                                 player.comboFactor = 1.0;
                                 player.printStatusBar();
                             }
                         }
-                        else
-                        {
+                        else {
                             board[selectedPos[0].y - 1][selectedPos[0].x - 1].drawBox(player.level, 12);
                             board[selectedPos[1].y - 1][selectedPos[1].x - 1].drawBox(player.level, 12);
 
@@ -581,25 +551,20 @@ int GAME::play() // Start game
                             board[selectedPos[0].y - 1][selectedPos[0].x - 1].isSelected = false;
                             board[selectedPos[1].y - 1][selectedPos[1].x - 1].isSelected = false;
 
-                            PlaySound(TEXT("wrongMatch.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                            playSound("wrong_match.wav");
                             player.life--;
                             player.comboFactor = 1.0;
                             player.printStatusBar();
                         }
-                    }
-                    else
-                    {
+                    } else {
                         board[selectedPos[0].y - 1][selectedPos[0].x - 1].isSelected = false;
                     }
                     selected = 0;
                 }
             }
-        }
-        else
-        {
+        } else {
             key = _getch();
-            switch (key)
-            {
+            switch (key) {
                 case KEY_UP:
                     moveUp();
                     break;
@@ -616,21 +581,16 @@ int GAME::play() // Start game
         }
     }
 
-
-    if (player.currentScore > player.highestScore)
-    {
+    if (player.currentScore > player.highestScore){
         player.highestScore = player.currentScore;
     }
 
-    if (player.level == 3)
-    {
+    if (player.level == 3) {
         player.currentScore = 0;
         player.level = 1;
         player.life = 10;
         player.comboFactor = 1.0;
-    }
-    else
-    {
+    } else {
         player.level++;
         player.comboFactor = 1.0;
     }
@@ -638,21 +598,21 @@ int GAME::play() // Start game
     player.updatePlayer();
 
     Sleep(500);
-
     system("cls");
-    switch (youWon(player))
-    {
+    switch (printYouWonScreen(player)) {
         case 1:
             return 1;
         case 2:
             return 2;
     }
+
+    return -1;
 }
 
-void GAME::initialize() // Initializing the board
-{
-    switch (player.level) // Getting the number of cells based on the player's level
-    {
+// Initializing the board
+void NormalGame::initialize() {
+    // Getting the number of cells based on the player's level
+    switch (player.level) {
         case 1:
             height = 4;
             width = 7;
@@ -667,34 +627,27 @@ void GAME::initialize() // Initializing the board
             break;
     }
 
-
-
     remainingPairs = (height * width) / 2;
-    board = new CELL * [height];
-    for (int i = 0; i < height; i++)
-    {
-        board[i] = new CELL[width];
+    board = new Cell * [height];
+    for (int i = 0; i < height; i++) {
+        board[i] = new Cell[width];
     }
 
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
             board[i][j].i = i;
             board[i][j].j = j;
         }
     }
 
     int pairNum = (height * width) / 2;
-    while (pairNum)
-    {
+    while (pairNum) {
         int index, cells = 2;
         char character = 65 + rand() % 26; // Getting a random character
         while (cells) // Assign a pair
         {
             index = rand() % (height * width);
-            if (board[index / width][index % width].character == ' ')
-            {
+            if (board[index / width][index % width].character == ' ') {
                 board[index / width][index % width].character = character;
                 cells--;
             }
@@ -703,8 +656,8 @@ void GAME::initialize() // Initializing the board
     }
 }
 
-void GAME::printBoard() // Prints out the game board
-{
+// Prints out the game board
+void NormalGame::printBoard() {
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -714,28 +667,21 @@ void GAME::printBoard() // Prints out the game board
     }
 }
 
-void GAME::shuffleBoard() // Shuffles the board when there is no valid pair left
-{
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
+// Shuffles the board when there is no valid pair left
+void NormalGame::shuffleBoard() {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
             board[i][j].character = ' ';
         }
     }
 
     int temp = remainingPairs;
-
-
-    while (temp)
-    {
+    while (temp) {
         int index, cells = 2;
         char character = 'A' + rand() % 26;
-        while (cells)
-        {
+        while (cells) {
             index = rand() % (height * width);
-            if (board[index / width][index % width].character == ' ' && board[index / width][index % width].isValid)
-            {
+            if (board[index / width][index % width].character == ' ' && board[index / width][index % width].isValid) {
                 board[index / width][index % width].character = character;
                 cells--;
             }
@@ -746,19 +692,15 @@ void GAME::shuffleBoard() // Shuffles the board when there is no valid pair left
 
 }
 
-void GAME::suggestMove() // Suggest a valid pair to the player, costing 1 HP
-{
+// Suggest a valid pair to the player, costing 1 HP
+void NormalGame::suggestMove() {
     char character = 'A';
-    while (character >= 'A' && character <= 'Z')
-    {
+    while (character >= 'A' && character <= 'Z') {
         int count = 0;
         int *pos = new int[remainingPairs * 2 * 2];
-        for (int i = 0; i < height; i++)
-        {
-            for (int j = 0; j < width; j++)
-            {
-                if (board[i][j].character == character && board[i][j].isValid)
-                {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if (board[i][j].character == character && board[i][j].isValid) {
                     pos[count++] = i;
                     pos[count++] = j;
                 }
@@ -784,12 +726,10 @@ void GAME::suggestMove() // Suggest a valid pair to the player, costing 1 HP
     }
 }
 
-void GAME::turnOffSuggestions() // Turns off the suggestion if the player don't match the suggested pair
-{
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
+// Turns off the suggestion if the player don't match the suggested pair
+void NormalGame::turnOffSuggestions() {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
             if (board[i][j].isSuggested == true)
                 board[i][j].isSuggested = false;
         }
