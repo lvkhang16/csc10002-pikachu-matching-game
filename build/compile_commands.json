@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/Users/lvkha/Desktop/pikachu-matching-game/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/pikachu.dir/includes_CXX.rsp -g -o CMakeFiles\\pikachu.dir\\src\\cell.cpp.obj -c C:\\Users\\lvkha\\Desktop\\pikachu-matching-game\\src\\cell.cpp",
+  "file": "C:/Users/lvkha/Desktop/pikachu-matching-game/src/cell.cpp",
+  "output": "CMakeFiles/pikachu.dir/src/cell.cpp.obj"
+},
+{
+  "directory": "C:/Users/lvkha/Desktop/pikachu-matching-game/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/pikachu.dir/includes_CXX.rsp -g -o CMakeFiles\\pikachu.dir\\src\\main.cpp.obj -c C:\\Users\\lvkha\\Desktop\\pikachu-matching-game\\src\\main.cpp",
+  "file": "C:/Users/lvkha/Desktop/pikachu-matching-game/src/main.cpp",
+  "output": "CMakeFiles/pikachu.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/lvkha/Desktop/pikachu-matching-game/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/pikachu.dir/includes_CXX.rsp -g -o CMakeFiles\\pikachu.dir\\src\\menuAndControl.cpp.obj -c C:\\Users\\lvkha\\Desktop\\pikachu-matching-game\\src\\menuAndControl.cpp",
+  "file": "C:/Users/lvkha/Desktop/pikachu-matching-game/src/menuAndControl.cpp",
+  "output": "CMakeFiles/pikachu.dir/src/menuAndControl.cpp.obj"
+},
+{
+  "directory": "C:/Users/lvkha/Desktop/pikachu-matching-game/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/pikachu.dir/includes_CXX.rsp -g -o CMakeFiles\\pikachu.dir\\src\\normalGame.cpp.obj -c C:\\Users\\lvkha\\Desktop\\pikachu-matching-game\\src\\normalGame.cpp",
+  "file": "C:/Users/lvkha/Desktop/pikachu-matching-game/src/normalGame.cpp",
+  "output": "CMakeFiles/pikachu.dir/src/normalGame.cpp.obj"
+},
+{
+  "directory": "C:/Users/lvkha/Desktop/pikachu-matching-game/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/pikachu.dir/includes_CXX.rsp -g -o CMakeFiles\\pikachu.dir\\src\\slidingGame.cpp.obj -c C:\\Users\\lvkha\\Desktop\\pikachu-matching-game\\src\\slidingGame.cpp",
+  "file": "C:/Users/lvkha/Desktop/pikachu-matching-game/src/slidingGame.cpp",
+  "output": "CMakeFiles/pikachu.dir/src/slidingGame.cpp.obj"
+},
+{
+  "directory": "C:/Users/lvkha/Desktop/pikachu-matching-game/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/pikachu.dir/includes_CXX.rsp -g -o CMakeFiles\\pikachu.dir\\src\\utility.cpp.obj -c C:\\Users\\lvkha\\Desktop\\pikachu-matching-game\\src\\utility.cpp",
+  "file": "C:/Users/lvkha/Desktop/pikachu-matching-game/src/utility.cpp",
+  "output": "CMakeFiles/pikachu.dir/src/utility.cpp.obj"
+}
+]

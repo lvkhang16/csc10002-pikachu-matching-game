@@ -1,0 +1,3 @@
+C:/Users/lvkha/Desktop/pikachu-matching-game/build/CMakeFiles/pikachu.dir
+C:/Users/lvkha/Desktop/pikachu-matching-game/build/CMakeFiles/edit_cache.dir
+C:/Users/lvkha/Desktop/pikachu-matching-game/build/CMakeFiles/rebuild_cache.dir
