@@ -1,4 +1,4 @@
-#include "normalGame.h"
+#include "NormalGame.h"
 
 void NormalGame::moveUp() {
     for (int i = x; i <= width; i++) {
