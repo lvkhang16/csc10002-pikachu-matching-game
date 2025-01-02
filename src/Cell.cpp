@@ -1,4 +1,4 @@
-#include "cell.h"
+#include "Cell.h"
 
 char box[5][10] = {
             {"*-------*"},
