@@ -1,54 +1,33 @@
-#include "normalGame.h"
+#include "SlidingGame.h"
 
-void NormalGame::moveUp() {
-    for (int i = x; i <= width; i++) {
-        for (int j = y - 1; j >= 1; j--) {
-            if (board[j - 1][i - 1].isValid) {
-                board[y - 1][x - 1].isHovered = false;
+void SlidingGame::moveUp() // Moves cell upward
+{
+    for (int i = x; i <= width; i++)
+    {
+        for (int j = y - 1; j >= 1; j--)
+        {
+            if (findNode(i, j) != NULL)
+            {
+                findNode(x, y)->isHovered = false;
                 x = i;
                 y = j;
-                board[y - 1][x - 1].isHovered = true;
+                findNode(x, y)->isHovered = true;
                 playSound("move.wav");
                 return;
             }
         }
     }
 
-    for (int i = x - 1; i >= 1; i--) {
-        for (int j = y - 1; j >= 1; j--) {
-            if (board[j - 1][i - 1].isValid) {
-                board[y - 1][x - 1].isHovered = false;
+    for (int i = x - 1; i >= 1; i--)
+    {
+        for (int j = y - 1; j >= 1; j--)
+        {
+            if (findNode(i, j) != NULL)
+            {
+                findNode(x, y)->isHovered = false;
                 x = i;
                 y = j;
-                board[y - 1][x - 1].isHovered = true;
-                playSound("move.wav");
-                return;
-            }
-        }
-    }
-}
-
-void NormalGame::moveDown() {
-    for (int i = x; i <= width; i++) {
-        for (int j = y + 1; j <= height; j++) {
-            if (board[j - 1][i - 1].isValid) {
-                board[y - 1][x - 1].isHovered = false;
-                x = i;
-                y = j;
-                board[y - 1][x - 1].isHovered = true;
-                playSound("move.wav");
-                return;
-            }
-        }
-    }
-
-    for (int i = x - 1; i >= 1; i--) {
-        for (int j = y + 1; j <= height; j++) {
-            if (board[j - 1][i - 1].isValid) {
-                board[y - 1][x - 1].isHovered = false;
-                x = i;
-                y = j;
-                board[y - 1][x - 1].isHovered = true;
+                findNode(x, y)->isHovered = true;
                 playSound("move.wav");
                 return;
             }
@@ -56,14 +35,53 @@ void NormalGame::moveDown() {
     }
 }
 
-void NormalGame::moveRight() {
-    for (int i = y; i >= 1; i--) {
-        for (int j = x + 1; j <= width; j++) {
-            if (board[i - 1][j - 1].isValid) {
-                board[y - 1][x - 1].isHovered = false;
+void SlidingGame::moveDown() // Moves cell downward
+{
+    for (int i = x; i <= width; i++)
+    {
+        for (int j = y + 1; j <= height; j++)
+        {
+            if (findNode(i, j) != NULL)
+            {
+                findNode(x, y)->isHovered = false;
+                x = i;
+                y = j;
+                findNode(x, y)->isHovered = true;
+                playSound("move.wav");
+                return;
+            }
+        }
+    }
+
+    for (int i = x - 1; i >= 1; i--)
+    {
+        for (int j = y + 1; j <= height; j++)
+        {
+            if (findNode(i, j) != NULL)
+            {
+                findNode(x, y)->isHovered = false;
+                x = i;
+                y = j;
+                findNode(x, y)->isHovered = true;
+                playSound("move.wav");
+                return;
+            }
+        }
+    }
+}
+
+void SlidingGame::moveRight() // Moves cell to the right
+{
+    for (int i = y; i >= 1; i--)
+    {
+        for (int j = x + 1; j <= width; j++)
+        {
+            if (findNode(j, i) != NULL)
+            {
+                findNode(x, y)->isHovered = false;
                 x = j;
                 y = i;
-                board[y - 1][x - 1].isHovered = true;
+                findNode(x, y)->isHovered = true;
                 playSound("move.wav");
                 return;
             }
@@ -72,12 +90,12 @@ void NormalGame::moveRight() {
 
     for (int i = y + 1; i <= height; i++) {
         for (int j = x + 1; j <= width; j++) {
-            if (board[i - 1][j - 1].isValid)
+            if (findNode(j, i) != NULL)
             {
-                board[y - 1][x - 1].isHovered = false;
+                findNode(x, y)->isHovered = false;
                 x = j;
                 y = i;
-                board[y - 1][x - 1].isHovered = true;
+                findNode(x, y)->isHovered = true;
                 playSound("move.wav");
                 return;
             }
@@ -85,14 +103,18 @@ void NormalGame::moveRight() {
     }
 }
 
-void NormalGame::moveLeft() {
-    for (int i = y; i >= 1; i--) {
-        for (int j = x - 1; j >= 1; j--) {
-            if (board[i - 1][j - 1].isValid) {
-                board[y - 1][x - 1].isHovered = false;
+void SlidingGame::moveLeft() // Moves cell to the left
+{
+    for (int i = y; i >= 1; i--)
+    {
+        for (int j = x - 1; j >= 1; j--)
+        {
+            if (findNode(j, i) != NULL)
+            {
+                findNode(x, y)->isHovered = false;
                 x = j;
                 y = i;
-                board[y - 1][x - 1].isHovered = true;
+                findNode(x, y)->isHovered = true;
                 playSound("move.wav");
                 return;
             }
@@ -103,12 +125,12 @@ void NormalGame::moveLeft() {
     {
         for (int j = x - 1; j >= 1; j--)
         {
-            if (board[i - 1][j - 1].isValid)
+            if (findNode(j, i) != NULL)
             {
-                board[y - 1][x - 1].isHovered = false;
+                findNode(x, y)->isHovered = false;
                 x = j;
                 y = i;
-                board[y - 1][x - 1].isHovered = true;
+                findNode(x, y)->isHovered = true;
                 playSound("move.wav");
                 return;
             }
@@ -116,7 +138,83 @@ void NormalGame::moveLeft() {
     }
 }
 
-bool NormalGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is an empty or unobstructed path between to cells
+SlidingCell *SlidingGame::findNode(int x, int y) // For accessing a specific cell, it returns the pointer to the cell at a specific coordinates. If that cell no longer exists, the function returns false
+{
+    if (y < 1 || y > height || x < 1 || x > width)
+        return NULL;
+
+    SlidingCell *temp = board[y - 1];
+    while (temp != NULL)
+    {
+        if (temp->j == (x - 1))
+        {
+            return temp;
+        }
+        temp = temp->next;
+    }
+    return NULL;
+}
+
+void SlidingGame::deleteNode(int x, int y) // For deleting a cell
+{
+    SlidingCell *p = findNode(x, y);
+
+    if (x == 1)
+    {
+        if (board[y - 1]->next == NULL)
+        {
+            board[y - 1]->deleteBox(player.level);
+            delete p;
+            board[y - 1] = NULL;
+            return;
+        }
+        else
+        {
+            board[y - 1] = p->next;
+
+
+            SlidingCell *temp = board[y - 1];
+            while (temp->next != NULL)
+            {
+                temp->j--;
+                temp = temp->next;
+            }
+
+            temp->deleteBox(player.level);
+            temp->j--;
+
+
+            p->deleteBox(player.level);
+            delete p;
+            return;
+        }
+    }
+    else
+    {
+        SlidingCell *q = findNode(x - 1, y);
+        q->next = p->next;
+
+        if (p->next != NULL)
+        {
+            SlidingCell *temp = p->next;
+            while (temp->next != NULL)
+            {
+                temp->j--;
+                temp = temp->next;
+            }
+            temp->deleteBox(player.level);
+            temp->j--;
+        }
+
+        p->deleteBox(player.level);
+
+        delete p;
+
+        return;
+    }
+}
+
+bool SlidingGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if there is an empty or unobstructed path between to cells
 {
     if (y1 == y2) {
         int a, b, count = 0;
@@ -126,14 +224,14 @@ bool NormalGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if ther
 
         for (int i = a; i <= b; i++)
         {
-            if (board[y1 - 1][i - 1].isValid)
+            if (findNode(i, y1) != NULL)
             {
                 count++;
             }
         }
         if (count == 2)
             return false;
-        if ((count == 1) && ((!board[y1 - 1][x1 - 1].isValid && board[y2 - 1][x2 - 1].isValid) || (board[y1 - 1][x1 - 1].isValid && !board[y2 - 1][x2 - 1].isValid)))
+        if ((count == 1) && ((findNode(x1, y1) == NULL && findNode(x2, y2) != NULL) || (findNode(x1, y1) != NULL && findNode(x2, y2) == NULL)))
         {
             return true;
         }
@@ -155,14 +253,14 @@ bool NormalGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if ther
         }
         for (int i = a; i <= b; i++)
         {
-            if (board[i - 1][x1 - 1].isValid)
+            if (findNode(x1, i) != NULL)
             {
                 count++;
             }
         }
         if (count == 2)
             return false;
-        if ((count == 1) && ((!board[y1 - 1][x1 - 1].isValid && board[y2 - 1][x2 - 1].isValid) || (board[y1 - 1][x1 - 1].isValid && !board[y2 - 1][x2 - 1].isValid)))
+        if ((count == 1) && ((findNode(x1, y1) == NULL && findNode(x2, y2) != NULL) || (findNode(x1, y1) != NULL && findNode(x2, y2) == NULL)))
         {
             return true;
         }
@@ -175,7 +273,7 @@ bool NormalGame::checkEmptyLine(int x1, int y1, int x2, int y2) // Check if ther
     return false;
 }
 
-bool NormalGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped matching
+bool SlidingGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shaped matching
 {
     if (y1 == y2) {
         int a, b;
@@ -183,7 +281,7 @@ bool NormalGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shap
         b = max(x1, x2);
         for (int i = a + 1; i < b; i++)
         {
-            if (board[y1 - 1][i - 1].isValid)
+            if (findNode(i, y1) != NULL)
             {
                 return false;
             }
@@ -203,7 +301,7 @@ bool NormalGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shap
         }
         for (int i = a + 1; i < b; i++)
         {
-            if (board[i - 1][x1 - 1].isValid)
+            if (findNode(x1, i) != NULL)
             {
                 return false;
             }
@@ -213,7 +311,7 @@ bool NormalGame::checkIMatching(int x1, int y1, int x2, int y2) // Checks I-shap
     return false;
 }
 
-bool NormalGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped matching
+bool SlidingGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shaped matching
 {
     if (y1 == y2 || x1 == x2)
     {
@@ -221,7 +319,7 @@ bool NormalGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shap
     }
 
     bool check1, check2;
-    if (!board[y1 - 1][x2 - 1].isValid)
+    if (findNode(x2, y1) == NULL)
     {
         check1 = checkEmptyLine(x1, y1, x2, y1);
         check2 = checkEmptyLine(x2, y2, x2, y1);
@@ -231,7 +329,7 @@ bool NormalGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shap
         }
     }
 
-    if (!board[y2 - 1][x1 - 1].isValid)
+    if (findNode(x1, y2) == NULL)
     {
         check1 = checkEmptyLine(x1, y1, x1, y2);
         check2 = checkEmptyLine(x2, y2, x1, y2);
@@ -243,7 +341,7 @@ bool NormalGame::checkLMatching(int x1, int y1, int x2, int y2) // Checks L-shap
     return false;
 }
 
-bool NormalGame::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped matching
+bool SlidingGame::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shaped matching
 {
     if (y1 == y2 || x1 == x2)
     {
@@ -280,9 +378,9 @@ bool NormalGame::checkZMatching(int x1, int y1, int x2, int y2) // Checks Z-shap
     return false;
 }
 
-bool NormalGame::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped matching
+bool SlidingGame::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shaped matching
 {
-    if (((y1 == y2) && (y1 == 1 || y1 == height)) || ((x1 == x2) && (x1 == 1 || x1 == width)))
+    if (((y1 == y2) && (y1 == 1 || y1 == height) || ((x1 == x2) && (x1 == 1 || x1 == width))))
     {
         return true;
     }
@@ -341,7 +439,7 @@ bool NormalGame::checkUMatching(int x1, int y1, int x2, int y2) // Checks U-shap
     return false;
 }
 
-bool NormalGame::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all matchings
+bool SlidingGame::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all matchings
 {
     if (checkIMatching(x1, y1, x2, y2))
         return true;
@@ -354,7 +452,7 @@ bool NormalGame::checkAllMatchings(int x1, int y1, int x2, int y2) // Checks all
     return false;
 }
 
-bool NormalGame::checkValidPairs() // Checks whether there is any pair that can be matched
+bool SlidingGame::checkValidPairs() // Checks whether there is any pair that can be matched
 {
     char character = 'A';
     while (character >= 'A' && character <= 'Z')
@@ -365,10 +463,13 @@ bool NormalGame::checkValidPairs() // Checks whether there is any pair that can 
         {
             for (int j = 0; j < width; j++)
             {
-                if (board[i][j].character == character && board[i][j].isValid)
+                if (findNode(j + 1, i + 1) != NULL)
                 {
-                    pos[count++] = i;
-                    pos[count++] = j;
+                    if (findNode(j + 1, i + 1)->character == character)
+                    {
+                        pos[count++] = i;
+                        pos[count++] = j;
+                    }
                 }
             }
         }
@@ -390,7 +491,7 @@ bool NormalGame::checkValidPairs() // Checks whether there is any pair that can 
     return false;
 }
 
-int NormalGame::play() // Start game
+int SlidingGame::play() // Start game
 {
     system("cls");
     PlaySound(NULL, NULL, 0);
@@ -432,19 +533,21 @@ int NormalGame::play() // Start game
 
         if (!checkValidPairs())
         {
+
             player.life--;
             player.comboFactor = 1.0;
             player.printStatusBar();
 
             while (!checkValidPairs())
                 shuffleBoard();
+
             playSound("shuffle.wav");
         }
 
-        if (!board[y - 1][x - 1].isValid) // Find a valid cell if the cell we are hovering on no longer exists
+        if (findNode(x, y) == NULL) // Find a valid cell if the cell we are hovering on no longer exists
         {
             int delta = 1;
-            while (!board[y - 1][x - 1].isValid)
+            while (findNode(x, y) == NULL)
             {
                 for (int i = -delta; i <= delta; i++)
                 {
@@ -453,12 +556,11 @@ int NormalGame::play() // Start game
                         if (y + i < 1 || y + i > height || x + j < 1 || x + j > width)
                             continue;
 
-                        if (board[y - 1 + i][x - 1 + j].isValid)
+                        if (findNode(x + j, y + i) != NULL)
                         {
-                            board[y - 1][x - 1].isHovered = false;
                             y = y + i;
                             x = x + j;
-                            board[y - 1][x - 1].isHovered = true;
+                            findNode(x, y)->isHovered = true;
                             goto exitLoop;
                         }
                     }
@@ -490,7 +592,9 @@ int NormalGame::play() // Start game
             }
             else if (temp == 32) //When cell is selected
             {
-                board[y - 1][x - 1].isSelected = true;
+
+
+                findNode(x, y)->isSelected = true;
                 selectedPos[selected].x = x;
                 selectedPos[selected].y = y;
                 selected++;
@@ -499,26 +603,50 @@ int NormalGame::play() // Start game
                     playSound("select.wav");
                 }
 
-                if (selected == 2) {
-                    // Check if two cells are not at the same spot
-                    if (!(selectedPos[0].x == selectedPos[1].x && selectedPos[0].y == selectedPos[1].y)) {
-                        if (board[selectedPos[0].y - 1][selectedPos[0].x - 1].character == board[selectedPos[1].y - 1][selectedPos[1].x - 1].character) {
-                            // Check if they can match
-                            if (checkAllMatchings(selectedPos[0].x, selectedPos[0].y, selectedPos[1].x, selectedPos[1].y)) { 
-                                playSound("select.wav");
+                if (selected == 2)
+                {
+                    if (!(selectedPos[0].x == selectedPos[1].x && selectedPos[0].y == selectedPos[1].y)) // Check if two cells are not at the same spot
+                    {
 
-                                board[selectedPos[0].y - 1][selectedPos[0].x - 1].drawBox(player.level, 10);
-                                board[selectedPos[1].y - 1][selectedPos[1].x - 1].drawBox(player.level, 10);
+                        if (findNode(selectedPos[0].x, selectedPos[0].y)->character == findNode(selectedPos[1].x, selectedPos[1].y)->character)
+                        {
+                            if (checkAllMatchings(selectedPos[0].x, selectedPos[0].y, selectedPos[1].x, selectedPos[1].y))
+                            {
+
+                                findNode(selectedPos[0].x, selectedPos[0].y)->drawBox(player.level, 10);
+                                findNode(selectedPos[1].x, selectedPos[1].y)->drawBox(player.level, 10);
+
                                 Sleep(200);
 
-                                board[selectedPos[0].y - 1][selectedPos[0].x - 1].deleteBox(player.level);
-                                board[selectedPos[1].y - 1][selectedPos[1].x - 1].deleteBox(player.level);
+                                findNode(selectedPos[0].x, selectedPos[0].y)->isSelected = false;
+                                findNode(selectedPos[1].x, selectedPos[1].y)->isSelected = false;
 
-                                printCellBackground(player.level, selectedPos[0].x, selectedPos[0].y);
-                                printCellBackground(player.level, selectedPos[1].x, selectedPos[1].y);
+                                int a, b;
 
-                                board[selectedPos[0].y - 1][selectedPos[0].x - 1].isValid = false;
-                                board[selectedPos[1].y - 1][selectedPos[1].x - 1].isValid = false;
+
+                                if (selectedPos[0].x > selectedPos[1].x)
+                                {
+                                    deleteNode(selectedPos[0].x, selectedPos[0].y);
+                                    a = countNodes(board[selectedPos[0].y - 1]);
+                                    printCellBackground(player.level, a + 1, selectedPos[0].y);
+
+                                    deleteNode(selectedPos[1].x, selectedPos[1].y);
+                                    b = countNodes(board[selectedPos[1].y - 1]);
+                                    printCellBackground(player.level, b + 1, selectedPos[1].y);
+                                }
+                                else
+                                {
+                                    deleteNode(selectedPos[1].x, selectedPos[1].y);
+                                    b = countNodes(board[selectedPos[1].y - 1]);
+                                    printCellBackground(player.level, b + 1, selectedPos[1].y);
+
+                                    deleteNode(selectedPos[0].x, selectedPos[0].y);
+                                    a = countNodes(board[selectedPos[0].y - 1]);
+                                    printCellBackground(player.level, a + 1, selectedPos[0].y);
+                                }
+
+                                if (findNode(x, y) != NULL)
+                                    findNode(x, y)->isHovered = true;
 
                                 turnOffSuggestions();
 
@@ -526,15 +654,9 @@ int NormalGame::play() // Start game
                                 player.currentScore += 10 * player.comboFactor;
                                 player.comboFactor += 0.1;
                                 player.printStatusBar();
-                            }
-                            else {
-                                board[selectedPos[0].y - 1][selectedPos[0].x - 1].drawBox(player.level, 12);
-                                board[selectedPos[1].y - 1][selectedPos[1].x - 1].drawBox(player.level, 12);
-
-                                Sleep(300);
-
-                                board[selectedPos[0].y - 1][selectedPos[0].x - 1].isSelected = false;
-                                board[selectedPos[1].y - 1][selectedPos[1].x - 1].isSelected = false;
+                            } else {
+                                findNode(selectedPos[0].x, selectedPos[0].y)->isSelected = false;
+                                findNode(selectedPos[1].x, selectedPos[1].y)->isSelected = false;
 
                                 playSound("wrong_match.wav");
                                 player.life--;
@@ -542,29 +664,35 @@ int NormalGame::play() // Start game
                                 player.printStatusBar();
                             }
                         }
-                        else {
-                            board[selectedPos[0].y - 1][selectedPos[0].x - 1].drawBox(player.level, 12);
-                            board[selectedPos[1].y - 1][selectedPos[1].x - 1].drawBox(player.level, 12);
+                        else
+                        {
+                            findNode(selectedPos[0].x, selectedPos[0].y)->drawBox(player.level, 12);
+                            findNode(selectedPos[1].x, selectedPos[1].y)->drawBox(player.level, 12);
 
                             Sleep(300);
 
-                            board[selectedPos[0].y - 1][selectedPos[0].x - 1].isSelected = false;
-                            board[selectedPos[1].y - 1][selectedPos[1].x - 1].isSelected = false;
+                            findNode(selectedPos[0].x, selectedPos[0].y)->isSelected = false;
+                            findNode(selectedPos[1].x, selectedPos[1].y)->isSelected = false;
 
                             playSound("wrong_match.wav");
                             player.life--;
                             player.comboFactor = 1.0;
                             player.printStatusBar();
                         }
-                    } else {
-                        board[selectedPos[0].y - 1][selectedPos[0].x - 1].isSelected = false;
+                    }
+                    else
+                    {
+                        findNode(selectedPos[0].x, selectedPos[0].y)->isSelected = false;
                     }
                     selected = 0;
                 }
             }
-        } else {
+        }
+        else
+        {
             key = _getch();
-            switch (key) {
+            switch (key)
+            {
                 case KEY_UP:
                     moveUp();
                     break;
@@ -581,9 +709,8 @@ int NormalGame::play() // Start game
         }
     }
 
-    if (player.currentScore > player.highestScore){
+    if (player.currentScore > player.highestScore)
         player.highestScore = player.currentScore;
-    }
 
     if (player.level == 3) {
         player.currentScore = 0;
@@ -598,19 +725,22 @@ int NormalGame::play() // Start game
     player.updatePlayer();
 
     Sleep(500);
+
     system("cls");
-    switch (printYouWonScreen(player)) {
+    switch (printYouWonScreen(player))
+    {
         case 1:
             return 1;
         case 2:
             return 2;
+        case 3:
+            return 3;
     }
 
     return -1;
 }
 
-// Initializing the board
-void NormalGame::initialize() {
+void SlidingGame::initialize() {
     // Getting the number of cells based on the player's level
     switch (player.level) {
         case 1:
@@ -628,27 +758,30 @@ void NormalGame::initialize() {
     }
 
     remainingPairs = (height * width) / 2;
-    board = new Cell * [height];
-    for (int i = 0; i < height; i++) {
-        board[i] = new Cell[width];
-    }
 
+    board = new SlidingCell * [height];
     for (int i = 0; i < height; i++) {
+        board[i] = NULL;
         for (int j = 0; j < width; j++) {
-            board[i][j].i = i;
-            board[i][j].j = j;
+            SlidingCell *p = new SlidingCell;
+            p->i = i;
+            p->j = j;
+            p->next = NULL;
+            push(board[i], p);
         }
     }
 
     int pairNum = (height * width) / 2;
     while (pairNum) {
-        int index, cells = 2;
+        int i, j, cells = 2;
         char character = 65 + rand() % 26; // Getting a random character
-        while (cells) // Assign a pair
-        {
-            index = rand() % (height * width);
-            if (board[index / width][index % width].character == ' ') {
-                board[index / width][index % width].character = character;
+        // Assign a pair
+        while (cells) {
+            i = rand() % height;
+            j = rand() % width;
+            SlidingCell *p = findNode(j + 1, i + 1);
+            if (p->character == ' ') {
+                p->character = character;
                 cells--;
             }
         }
@@ -656,66 +789,70 @@ void NormalGame::initialize() {
     }
 }
 
-// Prints out the game board
-void NormalGame::printBoard() {
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            board[i][j].drawBox(player.level);
+void SlidingGame::printBoard() {
+    for (int i = 0; i < height; i++) {
+        SlidingCell *temp = board[i];
+        while (temp != NULL) {
+            temp->drawBox(player.level);
+            temp = temp->next;
         }
     }
 }
 
 // Shuffles the board when there is no valid pair left
-void NormalGame::shuffleBoard() {
+void SlidingGame::shuffleBoard() {
     for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            board[i][j].character = ' ';
+        SlidingCell *temp = board[i];
+        while (temp != NULL) {
+            temp->character = ' ';
+            temp = temp->next;
         }
     }
 
     int temp = remainingPairs;
+
     while (temp) {
         int index, cells = 2;
         char character = 'A' + rand() % 26;
-        while (cells) {
+        while (cells)
+        {
             index = rand() % (height * width);
-            if (board[index / width][index % width].character == ' ' && board[index / width][index % width].isValid) {
-                board[index / width][index % width].character = character;
-                cells--;
+            if (findNode(index % width + 1, index / width + 1) != NULL)
+            {
+                if (findNode(index % width + 1, index / width + 1)->character == ' ')
+                {
+                    findNode(index % width + 1, index / width + 1)->character = character;
+                    cells--;
+                }
             }
         }
         temp--;
     }
 
-
 }
 
 // Suggest a valid pair to the player, costing 1 HP
-void NormalGame::suggestMove() {
+void SlidingGame::suggestMove() {
     char character = 'A';
     while (character >= 'A' && character <= 'Z') {
         int count = 0;
         int *pos = new int[remainingPairs * 2 * 2];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                if (board[i][j].character == character && board[i][j].isValid) {
-                    pos[count++] = i;
-                    pos[count++] = j;
-                }
+                if (findNode(j + 1, i + 1) != NULL)
+                    if (findNode(j + 1, i + 1)->character == character) {
+                        pos[count++] = i;
+                        pos[count++] = j;
+                    }
             }
         }
 
-        for (int i = 0; i < count - 2; i += 2)
-        {
-            for (int j = i + 2; j < count; j += 2)
-            {
-                if (checkAllMatchings(pos[i + 1] + 1, pos[i] + 1, pos[j + 1] + 1, pos[j] + 1))
-                {
+        for (int i = 0; i < count - 2; i += 2) {
+            for (int j = i + 2; j < count; j += 2) {
+                if (checkAllMatchings(pos[i + 1] + 1, pos[i] + 1, pos[j + 1] + 1, pos[j] + 1)) {
+                    findNode(pos[i + 1] + 1, pos[i] + 1)->isSuggested = true;
+                    findNode(pos[j + 1] + 1, pos[j] + 1)->isSuggested = true;
 
-                    board[pos[i]][pos[i + 1]].isSuggested = true;
-                    board[pos[j]][pos[j + 1]].isSuggested = true;
                     delete[] pos;
                     return;
                 }
@@ -727,11 +864,13 @@ void NormalGame::suggestMove() {
 }
 
 // Turns off the suggestion if the player don't match the suggested pair
-void NormalGame::turnOffSuggestions() {
+void SlidingGame::turnOffSuggestions() {
     for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            if (board[i][j].isSuggested == true)
-                board[i][j].isSuggested = false;
+        SlidingCell *temp = board[i];
+        while (temp != NULL) {
+            if (temp->isSuggested == true)
+                temp->isSuggested = false;
+            temp = temp->next;
         }
     }
 }
